@@ -1,0 +1,19 @@
+.menu-section {
+    display: block;
+
+    h3 {
+        background-color: #ddd;
+        display: block;
+        padding: 8px;
+        text-align: center;
+        text-transform: uppercase;
+        position: sticky;
+        top: 34px;
+        z-index: 1;
+    }
+}
+
+.menu-section__list {
+    list-style: none;
+    padding: 16px 16px 46px;
+}
