@@ -14,15 +14,53 @@ const config = {
     measurementId: "G-5KP997GH8L"
 }
 
-// initalizing the firebase package
-firebase.initializeApp(config)
+// initalizing the firebase package with guard to prevent double innit
+if (!firebase.apps.length) {
+    firebase.initializeApp(config);
+ }else {
+    // if already initialized, use that one
+    firebase.app();
+ }
 
 export const auth = firebase.auth()
 export const firestore = firebase.firestore()
+
 
 // sign in with Google popup
 const provider = new firebase.auth.GoogleAuthProvider()
 provider.setCustomParameters({ prompt: 'select_account' })
 export const signInWithGoogle = () => auth.signInWithPopup(provider)
+
+
+// creating a user in the database when signed in
+export const createUserProfileDocument = async (userAuth, additionalData) => {
+    // early return if the user auth object is not there
+    if (!userAuth) return
+
+    // getting the firebase snapshot of a users data
+    const userRef = firestore.doc(`users/${userAuth.uid}`)
+    const snapShot = await userRef.get()
+    
+    // if this user does not already exist
+    if (!snapShot.exists) {
+        const { displayName, email } = userAuth
+        const createdAt = new Date().toISOString().split('T')[0]
+
+        try {
+            // set the current user obj to the user ref to firebase
+            await userRef.set({
+                createdAt,
+                displayName,
+                email,
+                ...additionalData
+            })
+        } catch (error) {
+            console.log('error creating user: ', error)
+        }
+    }
+
+    // return userRef so components can use the snap shot data
+    return userRef
+}
 
 export default firebase

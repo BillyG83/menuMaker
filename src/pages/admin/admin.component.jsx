@@ -1,17 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { signInWithGoogle } from '../../firebase/firebase.js'
+import { auth } from '../../firebase/firebase.js'
 import SignIn from '../../components/sign-in/sign-in.component.jsx'
 import './admin.styles.scss'
 
 class AdminPage extends React.Component {
 	constructor(props) {
 		super(props)
-
-		this.state = {
-			userName: props.currentUser.displayName,
-			userEmail: props.currentUser.email
-		}
 	}
 	
 	render () {
@@ -25,7 +21,12 @@ class AdminPage extends React.Component {
 				<SignIn />
 				<br />
 				<br />
-				<button onClick={signInWithGoogle}>Google</button>
+				{
+					this.props.currentUser ?
+					<button onClick={() => auth.signOut()}>Sign out</button>
+					:
+					<button onClick={signInWithGoogle}>Sign in with Google</button>
+				}
 			</div>
 		)
 	}
