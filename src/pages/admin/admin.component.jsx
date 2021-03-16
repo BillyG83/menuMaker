@@ -1,15 +1,16 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { connect } from 'react-redux'
+
 import { signInWithGoogle } from '../../firebase/firebase.js'
 import { auth } from '../../firebase/firebase.js'
+
 import SignIn from '../../components/sign-in/sign-in.component.jsx'
+
 import './admin.styles.scss'
 
 class AdminPage extends React.Component {
-	constructor(props) {
-		super(props)
-	}
-	
+
 	render () {
 		return(
 			<div className="admin-page">
@@ -32,4 +33,8 @@ class AdminPage extends React.Component {
 	}
 }
 
-export default AdminPage
+const mapStateToProps = state => ({
+	currentUser: state.user.currentUser
+})
+
+export default connect(mapStateToProps)(AdminPage)

@@ -1,22 +1,22 @@
 import React from 'react'
 import { Route } from 'react-router-dom'
+import { connect } from 'react-redux'
+
 import { auth, createUserProfileDocument } from './firebase/firebase.js'
-import './App.css';
+import { setCurrentUser } from './redux/user/user.actions.js'
+
 import LandingPage from './pages/landing/landing.component.jsx'
 import AdminPage from './pages/admin/admin.component.jsx'
 
-class App extends React.Component {
-	constructor() {
-		super()
+import './App.css';
 
-		this.state = {
-			currentUser: null
-		}
-	}
+class App extends React.Component {
 
 	logOffAuth = null
 
 	componentDidMount() {
+		const {setCurrentUser} = this.props
+
 		// onAuthStateChanged is a firebase listener to hear if the user logs in
 		this.logOffAuth = auth.onAuthStateChanged(async userAuth => {
 			if (userAuth) {
@@ -25,17 +25,15 @@ class App extends React.Component {
 
 				// set the state with the user id and firestore data
 				userRef.onSnapshot(snapShot => {
-					this.setState({
-						currentUser: {
-							id: snapShot.id,
-							...snapShot.data()
-						}
+					setCurrentUser({
+						id: snapShot.id,
+						...snapShot.data()
 					})
 				})
 			}
 
 			// this will reset the currentUser when the users signs out
-			this.setState({ currentUser: null })
+			setCurrentUser(userAuth)
 		})
 	}
 
@@ -43,13 +41,6 @@ class App extends React.Component {
 		this.logOffAuth()
 	}
 
-	adminPageWithProps = (props) => {
-		return (
-			<AdminPage 
-				currentUser={this.state.currentUser}
-			/>
-		);
-	}
 	render() {
 		return (
 			<div className="app">
@@ -62,11 +53,15 @@ class App extends React.Component {
 				<Route 
 					exact={true} 
 					path='/admin' 
-					component={this.adminPageWithProps}
+					component={AdminPage}
 				/>
 			</div>
 		)
 	}
 }
 
-export default App;
+const mapDispatchToProps = dispatch => ({
+	setCurrentUser: user => dispatch(setCurrentUser(user))
+})
+
+export default connect(null, mapDispatchToProps)(App);
