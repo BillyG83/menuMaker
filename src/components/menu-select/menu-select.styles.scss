@@ -1,5 +1,5 @@
 .menu-select {
-    background-color: aqua;
+    background-color: var(--blue);
     display: block;
     padding: 8px;
     text-align: center;
@@ -10,6 +10,8 @@
     z-index: 2;
 
     a {
+        color: var(--white);
         margin: 4px;
+        text-decoration: none;
     }
 }

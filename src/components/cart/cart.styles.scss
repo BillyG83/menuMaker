@@ -1,0 +1,14 @@
+.cart {
+    background-color: var(--white);
+    border-radius: 50%;
+    border: 3px solid var(--blue);
+    bottom: 10px;
+    display: block;
+    height: 32px;
+    padding: 4px;
+    position: fixed;
+    right: 10px;
+    text-align: center;
+    width: 32px;
+    z-index: 4;
+}

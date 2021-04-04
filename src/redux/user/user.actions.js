@@ -1,4 +1,6 @@
+import reduxConst from '../reduxConst.js'
+
 export const setCurrentUser = user => ({
-    type: 'SET_CURRENT_USER',
+    type: reduxConst.SET_CURRENT_USER,
     payload: user
 })

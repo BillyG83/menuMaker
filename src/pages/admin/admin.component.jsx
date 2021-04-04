@@ -10,7 +10,6 @@ import SignIn from '../../components/sign-in/sign-in.component.jsx'
 import './admin.styles.scss'
 
 class AdminPage extends React.Component {
-
 	render () {
 		return(
 			<div className="admin-page">

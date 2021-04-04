@@ -15,7 +15,7 @@ class App extends React.Component {
 	logOffAuth = null
 
 	componentDidMount() {
-		const {setCurrentUser} = this.props
+		const { setCurrentUser } = this.props
 
 		// onAuthStateChanged is a firebase listener to hear if the user logs in
 		this.logOffAuth = auth.onAuthStateChanged(async userAuth => {

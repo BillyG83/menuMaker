@@ -2,6 +2,8 @@ import React from 'react'
 import Header from '../../components/header/header.component.jsx'
 import MenuSelect from '../../components/menu-select/menu-select.component.jsx'
 import MenuCollection from '../../components/menu-collection/menu-collection.component.jsx'
+import Cart from '../../components/cart/cart.component.jsx'
+import Order from '../../components/order/order.component.jsx'
 import './landing.styles.scss'
 
 import mockData from '../../mockData.js'
@@ -38,6 +40,8 @@ class LandingPage extends React.Component {
 				<MenuCollection 
 					businessMenu={this.state.businessMenu.sort((a, b) => (a.catOrder > b.catOrder) ? 1 : -1)}
 				/>
+				<Cart />
+				<Order />
 			</div>
 		)
 	}
