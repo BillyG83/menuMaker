@@ -33,6 +33,7 @@ const mockData = {
                     catItems: [
                         {
                             name: `Coca Cola`,
+                            id: '1',
                             detail: `Classic Coke with ice and a slice`,
                             price: `1.50`,
                             subCat: `Soft Drinks`,
@@ -55,6 +56,7 @@ const mockData = {
                         },
                         {
                             name: `Ice Tea`,
+                            id: '2',
                             detail: `Cool iced tea with lemon`,
                             price: `1.50`,
                             subCat: `Soft Drinks`,
@@ -86,6 +88,7 @@ const mockData = {
                         },
                         {
                             name: `Coffee`,
+                            id: '3',
                             detail: `Fresh ground beans into your cup`,
                             price: `1.50`,
                             subCat: `Coffee`,
@@ -123,6 +126,7 @@ const mockData = {
                     catItems: [
                         {
                             name: `Duck Spring Rolls`,
+                            id: '4',
                             detail: `served with salad and sweet chilli sauce`,
                             price: `4.50`,
                             subCat: `Meats`,
@@ -149,6 +153,7 @@ const mockData = {
                         },
                         {
                             name: `Veg Spring Rolls`,
+                            id: '5',
                             detail: `served with salad and sweet chilli sauce`,
                             price: `4.50`,
                             subCat: `Vegan`,
@@ -175,6 +180,7 @@ const mockData = {
                         },
                         {
                             name: `Boiled Eggs on toast`,
+                            id: '6',
                             detail: `served on fresh baked brown bread`,
                             price: `2.50`,
                             subCat: `Vegetarian`,
@@ -201,6 +207,7 @@ const mockData = {
                     catItems: [
                         {
                             name: `Pasta and Pesto`,
+                            id: '7',
                             detail: `home made spice pesto on pasta`,
                             price: `9.50`,
                             subCat: `Vegetarian`,
@@ -237,6 +244,7 @@ const mockData = {
                         },
                         {
                             name: `Chicken Burger`,
+                            id: '8',
                             detail: `Fresh tempura chicken on home made bap`,
                             price: `9.50`,
                             subCat: `Chicken`,
@@ -251,6 +259,7 @@ const mockData = {
                         },
                         {
                             name: `Pizza`,
+                            id: '9',
                             detail: `fresh baked pizza with our special sauce`,
                             price: `7.50`,
                             subCat: `Pizza`,

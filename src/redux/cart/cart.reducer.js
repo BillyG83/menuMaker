@@ -1,6 +1,8 @@
 import reduxConst from '../reduxConst.js'
+import { newOrderItem } from '../reduxUtils.js'
 
 const INITIAL_STATE = {
+    cartItems: [],
     hidden: true,
 }
 
@@ -10,6 +12,12 @@ const cartReducer = (state = INITIAL_STATE, action) => {
             return {
                 ...state,
                 hidden: !state.hidden
+            }
+
+        case reduxConst.ADD_ITEM_TO_ORDER:
+            return {
+                ...state,
+                cartItems: newOrderItem(state.cartItems, action.payload),
             }
         default:
             return state
