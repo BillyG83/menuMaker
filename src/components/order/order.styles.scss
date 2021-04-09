@@ -10,6 +10,10 @@
     transition: all 0.3s ease-out;
     width: 100vw;
     z-index: 3;
+
+    h2 {
+        margin-bottom: 16px;
+    }
 }
 
 .order--open {

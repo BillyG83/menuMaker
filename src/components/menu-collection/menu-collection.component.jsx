@@ -5,7 +5,7 @@ import './menu-collection.styles.scss'
 const MenuCollection = ({ businessMenu }) => {
 	return(
 		<main className="menu">
-			<ul className="menu-collection">
+			<div className="menu-collection">
 				{
 					businessMenu.map((menuSection, i) => (
 						<MenuSection 
@@ -15,7 +15,7 @@ const MenuCollection = ({ businessMenu }) => {
 						/>
 					))
 				}
-			</ul>
+			</div>
 		</main>
 	)
 }

@@ -2,13 +2,19 @@
     background-color: var(--white);
     border-radius: 50%;
     border: 3px solid var(--blue);
-    bottom: 10px;
+    bottom: -40px;
     display: block;
-    height: 32px;
+    height: 2px;
     padding: 4px;
     position: fixed;
     right: 10px;
     text-align: center;
+    transition: all 0.5s cubic-bezier(0.35,-0.65, 0.63, 2.34);
     width: 32px;
     z-index: 4;
+
+    &.cart--has-items {
+        bottom: 10px;
+        height: 32px;
+    }
 }
