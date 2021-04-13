@@ -5,8 +5,9 @@ import { connect } from 'react-redux'
 import { auth, createUserProfileDocument } from './firebase/firebase.js'
 import { setCurrentUser } from './redux/user/user.actions.js'
 
-import LandingPage from './pages/landing/landing.component.jsx'
 import AdminPage from './pages/admin/admin.component.jsx'
+import CheckoutPage from './pages/checkout/checkout.component.jsx'
+import LandingPage from './pages/landing/landing.component.jsx'
 
 import './App.css';
 
@@ -54,6 +55,12 @@ class App extends React.Component {
 					exact={true} 
 					path='/admin' 
 					component={AdminPage}
+				/>
+
+				<Route 
+					exact={true} 
+					path='/checkout' 
+					component={CheckoutPage}
 				/>
 			</div>
 		)

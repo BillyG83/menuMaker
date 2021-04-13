@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { toggleOrderHidden } from '../../redux/cart/cart.actions.js'
-import { selectCartItemsCount } from './cart.selectors.js'
+import { selectCartItemsCount } from '../../redux/cart/cart.selectors.js'
 import './cart.styles.scss'
 
 const Cart = ({ itemTotal, toggleOrderHidden }) => (
@@ -22,6 +22,5 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
     toggleOrderHidden: () => dispatch(toggleOrderHidden())
 })
-
 
 export default connect(mapStateToProps, mapDispatchToProps)(Cart)

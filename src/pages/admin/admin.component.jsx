@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 
+import { selectCurrentUser } from '../../redux/user/user.selectors.js'
 import { signInWithGoogle } from '../../firebase/firebase.js'
 import { auth } from '../../firebase/firebase.js'
 
@@ -33,7 +34,7 @@ class AdminPage extends React.Component {
 }
 
 const mapStateToProps = state => ({
-	currentUser: state.user.currentUser
+	currentUser: selectCurrentUser(state)
 })
 
 export default connect(mapStateToProps)(AdminPage)

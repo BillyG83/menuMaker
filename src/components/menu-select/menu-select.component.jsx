@@ -3,7 +3,7 @@ import './menu-select.styles.scss'
 
 const MenuSelect = ({ menuSections }) => {
 	return(
-		<section className="menu-select">
+		<nav className="menu-select">
 			{
 				menuSections && menuSections.map((menuSection, i) => {
 					return (
@@ -16,7 +16,7 @@ const MenuSelect = ({ menuSections }) => {
 					)
 				})
 			}
-		</section>
+		</nav>
 	)
 }
 
