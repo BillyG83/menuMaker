@@ -1,23 +1,23 @@
 const mockData = {
-    userName: `Bill Gilmore`,
-    UUID: `fbeyhwfuyewfburw`,
-    signUpDate: `2020-03-30`,
+    userName: "Bill Gilmore",
+    UUID: "fbeyhwfuyewfburw",
+    signUpDate: "2020-03-30",
     accounts: [
         {
-            businessCurrency: `Euro`,
-            businessId: `fbeyhwfuyewfburw-208004-billsbar`,
-            businessJoinDate: `2020-03-30`,
-            businessLogo: `/img/logo.jpg`,
-            businessName: `Bill's Bar`,
-            url: `208004-billsbar`,
+            businessCurrency: "Euro",
+            businessId: "fbeyhwfuyewfburw-208004-billsbar",
+            businessJoinDate: "2020-03-30",
+            businessLogo: "/img/logo.jpg",
+            businessName: "Bill's Bar",
+            url: "208004-billsbar",
             businessInfo: {
-                businessAddress: `San Marco 12, Chueca`,
-                businessCity: `Madrid`,
-                businessCountry: `Spain`,
-                businessEmail: `bill@thebar.com`,
-                businessPhone: `07712345678`,
-                businessPostCode: `28004`,
-                businessWebUrl: `https://www.google.com/`,
+                businessAddress: "San Marco 12, Chueca",
+                businessCity: "Madrid",
+                businessCountry: "Spain",
+                businessEmail: "bill@thebar.com",
+                businessPhone: "07712345678",
+                businessPostCode: "28004",
+                businessWebUrl: "https://www.google.com/",
             },
             businessSocial: {
                 facebook: 'https://www.facebook.com/',
@@ -26,42 +26,42 @@ const mockData = {
             },
             businessMenu: [
                 {
-                    catName: `Drinks`,
-                    catIcon: `drink`,
+                    catName: "Drinks",
+                    catIcon: "drink",
                     catOrder: 3,
                     isActive: true,
                     catItems: [
                         {
-                            name: `Coca Cola`,
+                            name: "Coca Cola",
                             id: '1',
-                            detail: `Classic Coke with ice and a slice`,
-                            price: `1.50`,
-                            subCat: `Soft Drinks`,
+                            detail: "Classic Coke with ice and a slice",
+                            price: 1.50,
+                            subCat: "Soft Drinks",
                             isActive: true,
-                            moreInfo: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.`,
+                            moreInfo: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.",
                             icons: [
                                 { name: 'soft drink', icon: 'drink' },
                                 { name: 'sweet', icon: 'sugar' },
                             ],
                             variants: [
                                 {
-                                    name: `Small`,
-                                    price: `1.50`
+                                    name: "Small",
+                                    price: 1.50
                                 },
                                 {
-                                    name: `Large`,
-                                    price: `2.50`
+                                    name: "Large",
+                                    price: 2.50
                                 }
                             ]
                         },
                         {
-                            name: `Ice Tea`,
+                            name: "Ice Tea",
                             id: '2',
-                            detail: `Cool iced tea with lemon`,
-                            price: `1.50`,
-                            subCat: `Soft Drinks`,
+                            detail: "Cool iced tea with lemon",
+                            price: 1.50,
+                            subCat: "Soft Drinks",
                             isActive: true,
-                            moreInfo: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.`,
+                            moreInfo: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.",
                             icons: [
                                 { name: 'soft drink', icon: 'drink' },
                                 { name: 'sweet', icon: 'sugar' },
@@ -69,29 +69,29 @@ const mockData = {
                             ],
                             variants: [
                                 {
-                                    name: `Small`,
-                                    price: `1.50`
+                                    name: "Small",
+                                    price: 1.50
                                 },
                                 {
-                                    name: `Large`,
-                                    price: `2.50`
+                                    name: "Large",
+                                    price: 2.50
                                 },
                                 {
-                                    name: `No Sugar Small`,
-                                    price: `1.25`
+                                    name: "No Sugar Small",
+                                    price: 1.25
                                 },
                                 {
-                                    name: `No Sugar Large`,
-                                    price: `1.75`
+                                    name: "No Sugar Large",
+                                    price: 1.75
                                 }
                             ]
                         },
                         {
-                            name: `Coffee`,
+                            name: "Coffee",
                             id: '3',
-                            detail: `Fresh ground beans into your cup`,
-                            price: `1.50`,
-                            subCat: `Coffee`,
+                            detail: "Fresh ground beans into your cup",
+                            price: 1.50,
+                            subCat: "Coffee",
                             isActive: true,
                             icons: [
                                 { name: 'hot drink', icon: 'mug' },
@@ -99,39 +99,39 @@ const mockData = {
                             ],
                             variants: [
                                 {
-                                    name: `Short Black`,
-                                    price: `1.50`
+                                    name: "Short Black",
+                                    price: 1.50
                                 },
                                 {
-                                    name: `Americano`,
-                                    price: `2.50`
+                                    name: "Americano",
+                                    price: 2.50
                                 },
                                 {
-                                    name: `La Tea`,
-                                    price: `2.25`
+                                    name: "La Tea",
+                                    price: 2.25
                                 },
                                 {
-                                    name: `Cappuccino`,
-                                    price: `2.75`
+                                    name: "Cappuccino",
+                                    price: 2.75
                                 }
                             ]
                         }
                     ]
                 },
                 {
-                    catName: `Starters`,
-                    catIcon: `fork`,
+                    catName: "Starters",
+                    catIcon: "fork",
                     catOrder: 1,
                     isActive: true,
                     catItems: [
                         {
-                            name: `Duck Spring Rolls`,
+                            name: "Duck Spring Rolls",
                             id: '4',
-                            detail: `served with salad and sweet chilli sauce`,
-                            price: `4.50`,
-                            subCat: `Meats`,
+                            detail: "served with salad and sweet chilli sauce",
+                            price: 4.50,
+                            subCat: "Meats",
                             isActive: true,
-                            moreInfo: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.`,
+                            moreInfo: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.",
                             icons: [
                                 { name: 'cheese', icon: 'cheese' },
                                 { name: 'dairy', icon: 'milk' },
@@ -139,26 +139,26 @@ const mockData = {
                                 { name: 'vegetarian', icon: 'plant' },
                             ],
                             ingredients: [
-                                `cup milk`,
-                                `white vinegar`,
-                                `flour`,
-                                `white sugar`,
-                                `baking powder`,
-                                `baking soda`,
-                                `salt`,
-                                `egg`,
-                                `butter, melted`,
-                                `cooking spray`,
+                                "cup milk",
+                                "white vinegar",
+                                "flour",
+                                "white sugar",
+                                "baking powder",
+                                "baking soda",
+                                "salt",
+                                "egg",
+                                "butter, melted",
+                                "cooking spray",
                             ],
                         },
                         {
-                            name: `Veg Spring Rolls`,
+                            name: "Veg Spring Rolls",
                             id: '5',
-                            detail: `served with salad and sweet chilli sauce`,
-                            price: `4.50`,
-                            subCat: `Vegan`,
+                            detail: "served with salad and sweet chilli sauce",
+                            price: 4.50,
+                            subCat: "Vegan",
                             isActive: true,
-                            moreInfo: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.`,
+                            moreInfo: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.",
                             icons: [
                                 { name: 'cheese', icon: 'cheese' },
                                 { name: 'dairy', icon: 'milk' },
@@ -166,26 +166,26 @@ const mockData = {
                                 { name: 'vegetarian', icon: 'plant' },
                             ],
                             ingredients: [
-                                { value: `cup milk` },
-                                { value: `white vinegar` },
-                                { value: `flour` },
-                                { value: `white sugar` },
-                                { value: `baking powder` },
-                                { value: `baking soda` },
-                                { value: `salt` },
-                                { value: `egg` },
-                                { value: `butter }, melted` },
-                                { value: `cooking spray` },
+                                { value: "cup milk" },
+                                { value: "white vinegar" },
+                                { value: "flour" },
+                                { value: "white sugar" },
+                                { value: "baking powder" },
+                                { value: "baking soda" },
+                                { value: "salt" },
+                                { value: "egg" },
+                                { value: "butter }, melted" },
+                                { value: "cooking spray" },
                             ],
                         },
                         {
-                            name: `Boiled Eggs on toast`,
+                            name: "Boiled Eggs on toast",
                             id: '6',
-                            detail: `served on fresh baked brown bread`,
-                            price: `2.50`,
-                            subCat: `Vegetarian`,
+                            detail: "served on fresh baked brown bread",
+                            price: 2.50,
+                            subCat: "Vegetarian",
                             isActive: true,
-                            moreInfo: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.`,
+                            moreInfo: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.",
                             icons: [
                                 { name: 'cheese', icon: 'cheese' },
                                 { name: 'dairy', icon: 'milk' },
@@ -193,36 +193,36 @@ const mockData = {
                                 { name: 'vegetarian', icon: 'plant' },
                             ],
                             ingredients: [
-                                `eggs`,
-                                `bread`
+                                "eggs",
+                                "bread"
                             ],
                         }
                     ]
                 },
                 {
-                    catName: `Mains`,
-                    catIcon: `plate`,
+                    catName: "Mains",
+                    catIcon: "plate",
                     catOrder: 2,
                     isActive: true,
                     catItems: [
                         {
-                            name: `Pasta and Pesto`,
+                            name: "Pasta and Pesto",
                             id: '7',
-                            detail: `home made spice pesto on pasta`,
-                            price: `9.50`,
-                            subCat: `Vegetarian`,
+                            detail: "home made spice pesto on pasta",
+                            price: 9.50,
+                            subCat: "Vegetarian",
                             isActive: true,
                             variants: [
                                 {
-                                    name: `Red Pesto`,
-                                    details: `chilli, garlic, red peppers`
+                                    name: "Red Pesto",
+                                    details: "chilli, garlic, red peppers"
                                 },
                                 {
-                                    name: `Green Pesto`,
-                                    details: `chilli, garlic, pees`
+                                    name: "Green Pesto",
+                                    details: "chilli, garlic, pees"
                                 }
                             ],
-                            moreInfo: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.`,
+                            moreInfo: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.",
                             icons: [
                                 { name: 'cheese', icon: 'cheese' },
                                 { name: 'dairy', icon: 'milk' },
@@ -230,26 +230,26 @@ const mockData = {
                                 { name: 'vegetarian', icon: 'plant' },
                             ],
                             ingredients: [
-                                `cup milk`,
-                                `white vinegar`,
-                                `flour`,
-                                `white sugar`,
-                                `baking powder`,
-                                `baking soda`,
-                                `salt`,
-                                `egg`,
-                                `butter, melted`,
-                                `cooking spray`,
+                                "cup milk",
+                                "white vinegar",
+                                "flour",
+                                "white sugar",
+                                "baking powder",
+                                "baking soda",
+                                "salt",
+                                "egg",
+                                "butter, melted",
+                                "cooking spray",
                             ],
                         },
                         {
-                            name: `Chicken Burger`,
+                            name: "Chicken Burger",
                             id: '8',
-                            detail: `Fresh tempura chicken on home made bap`,
-                            price: `9.50`,
-                            subCat: `Chicken`,
+                            detail: "Fresh tempura chicken on home made bap",
+                            price: 9.50,
+                            subCat: "Chicken",
                             isActive: true,
-                            moreInfo: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.`,
+                            moreInfo: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.",
                             icons: [
                                 { name: 'cheese', icon: 'cheese' },
                                 { name: 'dairy', icon: 'milk' },
@@ -258,35 +258,35 @@ const mockData = {
                             ],
                         },
                         {
-                            name: `Pizza`,
+                            name: "Pizza",
                             id: '9',
-                            detail: `fresh baked pizza with our special sauce`,
-                            price: `7.50`,
-                            subCat: `Pizza`,
+                            detail: "fresh baked pizza with our special sauce",
+                            price: 7.50,
+                            subCat: "Pizza",
                             isActive: true,
                             variants: [
                                 {
-                                    name: `Margarita`,
-                                    details: `classic cheese and tomato`
+                                    name: "Margarita",
+                                    details: "classic cheese and tomato"
                                 },
                                 {
-                                    name: `Pepperoni`,
-                                    details: `slice of cheap meats`
+                                    name: "Pepperoni",
+                                    details: "slice of cheap meats"
                                 },
                                 {
-                                    name: `Hawaiian`,
-                                    details: `ham and pineapple`
+                                    name: "Hawaiian",
+                                    details: "ham and pineapple"
                                 },
                                 {
-                                    name: `Veggie`,
-                                    details: `a selection of fresh veg`
+                                    name: "Veggie",
+                                    details: "a selection of fresh veg"
                                 },
                                 {
-                                    name: `Meat Feast`,
-                                    details: `all the meats`
+                                    name: "Meat Feast",
+                                    details: "all the meats"
                                 }
                             ],
-                            moreInfo: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.`,
+                            moreInfo: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.",
                             icons: [
                                 { name: 'cheese', icon: 'cheese' },
                                 { name: 'dairy', icon: 'milk' },
