@@ -7,10 +7,23 @@ export const newOrderItem = (currentOrder, itemToAdd) => {
         return currentOrder.map(
             orderItem => orderItem.id === itemToAdd.id ?
                 {...orderItem, quantity: orderItem.quantity +1 }
-            :
-                orderItem
+            : orderItem
         )
     }
 
     return [...currentOrder, { ...itemToAdd, quantity: 1 }]
+}
+
+export const removeOrderItem = (currentOrder, itemToRemove) => {
+    const existingOrderItem = currentOrder.find(
+        orderItem => orderItem.id === itemToRemove.id
+    )
+
+    if (existingOrderItem.quantity === 1) {
+        return currentOrder.filter(item => item.id !== itemToRemove.id)
+    }
+
+    return currentOrder.map(orderItem => orderItem.id === itemToRemove.id ?
+        {...orderItem, quantity: orderItem.quantity -1 }
+    : orderItem)
 }
