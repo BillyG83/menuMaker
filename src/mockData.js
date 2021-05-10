@@ -1,22 +1,22 @@
 const mockData = {
-    userName: "Bill Gilmore",
-    UUID: "fbeyhwfuyewfburw",
-    signUpDate: "2020-03-30",
+    createdAt: "2021-03-02",
+    displayName: "Bill Gilmore",
+    email: 'bill.multimediamonsters@gmail.com',
+    id: 'ZSpvTufpfgZKikuXCDsZPQHboVh2',
     accounts: [
         {
             businessCurrency: "Euro",
-            businessId: "fbeyhwfuyewfburw-208004-billsbar",
-            businessJoinDate: "2020-03-30",
+            businessId: "PQHboVh2-20210302-28004-billsbar",
+            businessJoinDate: "2021-03-02",
             businessLogo: "/img/logo.jpg",
             businessName: "Bill's Bar",
-            url: "208004-billsbar",
+            businessPostCode: "28004",
             businessInfo: {
                 businessAddress: "San Marco 12, Chueca",
                 businessCity: "Madrid",
                 businessCountry: "Spain",
                 businessEmail: "bill@thebar.com",
                 businessPhone: "07712345678",
-                businessPostCode: "28004",
                 businessWebUrl: "https://www.google.com/",
             },
             businessSocial: {
