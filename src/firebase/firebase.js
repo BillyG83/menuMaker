@@ -17,10 +17,10 @@ const config = {
 // initalizing the firebase package with guard to prevent double innit
 if (!firebase.apps.length) {
     firebase.initializeApp(config);
- }else {
+ } else {
     // if already initialized, use that one
     firebase.app();
- }
+}
 
 export const auth = firebase.auth()
 export const firestore = firebase.firestore()
@@ -61,6 +61,27 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
 
     // return userRef so components can use the snap shot data
     return userRef
+}
+
+export const addNewMenu = async (userId, newMenuData) => {
+    if (!userId || !newMenuData) return
+
+    // getting the firebase snapshot of a users accounts
+    const accountRef = firestore.doc(`users/${userId}/accounts/${newMenuData.businessId}`)
+    const snapShot = await accountRef.get()
+    
+    if (!snapShot.exists) {
+        try {
+            // set the current user obj to the user ref to firebase
+            await accountRef.set({
+                ...newMenuData
+            })
+        } catch (error) {
+            console.log('error creating user account: ', error)
+        }
+    }
+
+    return
 }
 
 export default firebase

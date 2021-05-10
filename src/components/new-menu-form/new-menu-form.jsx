@@ -3,18 +3,32 @@ import React from 'react'
 const NewMenuForm = ({ formSubmitted }) => {
     let businessName = ''
     let businessPostCode = ''
+    let currency = 'EUR'
 
     const inputChanged = (event) => {
-        event.target.id === 'businessName' ?
-        businessName = event.target.value
-        :
-        businessPostCode = event.target.value
+        if (!event.target.id || !event.target.value) return
+
+        switch(event.target.id) {
+            case 'businessName':
+                businessName = event.target.value
+            case 'businessPostCode':
+                businessPostCode = event.target.value
+            case 'currency':
+                currency = event.target.value
+            default:
+                return
+        }
     }
 
     const handleSubmit = (event) => {
         event.preventDefault()
-        const createdAt = new Date().toISOString().split('T')[0]
-        formSubmitted(businessName, businessPostCode, createdAt)
+        const newMenuData = {
+            'businessName': businessName,
+            'businessPostCode': businessPostCode,
+            'createdAt': new Date().toISOString().split('T')[0],
+            'currency': currency,
+        }
+        formSubmitted(newMenuData)
     }
 
     return(
@@ -29,6 +43,7 @@ const NewMenuForm = ({ formSubmitted }) => {
                     onKeyUp={inputChanged}
                 />
             </label>
+
             <label>
                 Business Post Code (required)
                 <input 
@@ -39,6 +54,16 @@ const NewMenuForm = ({ formSubmitted }) => {
                     onKeyUp={inputChanged}
                 />
             </label>
+
+            <label>
+                <div>Please select your currency</div>
+                <select id="currency" onChange={inputChanged}>
+                    <option value="EUR">Euros €</option>
+                    <option value="USD">Dollars $</option>
+                    <option value="GBP">Pounds £</option>
+                </select>
+            </label>
+            
             <button type="button" onClick={handleSubmit}>Done, easy</button>
         </form>
     )
