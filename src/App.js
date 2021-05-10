@@ -8,6 +8,7 @@ import { setCurrentUser } from './redux/user/user.actions.js'
 import AdminPage from './pages/admin/admin.component.jsx'
 import CheckoutPage from './pages/checkout/checkout.component.jsx'
 import LandingPage from './pages/landing/landing.component.jsx'
+import MenuPage from './pages/menu/menu.component.jsx'
 
 import './App.css';
 
@@ -61,6 +62,12 @@ class App extends React.Component {
 					exact={true} 
 					path='/checkout' 
 					component={CheckoutPage}
+				/>
+
+				<Route 
+					exact={true} 
+					path='/menu' 
+					component={MenuPage}
 				/>
 			</div>
 		)
