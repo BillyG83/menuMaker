@@ -84,4 +84,25 @@ export const addNewMenu = async (userId, newMenuData) => {
     return
 }
 
+// get collection of logged in users saved parks from firestore
+export const getUsersMenus = async (userID) => {
+    if (!userID) return
+    let menuAccounts = null
+
+    // check to see if the user has the collection
+    const usersMenuAccounts = firestore.collection(`users/${userID}/accounts`)
+    const usersAccountsSnapShot = await usersMenuAccounts.get()
+
+    if (usersAccountsSnapShot.size <= 0) {
+        return menuAccounts = false
+    } else {
+        menuAccounts = []
+        usersAccountsSnapShot.docs.forEach(doc => {
+            const menuSnapShotData = doc.data()
+            menuAccounts.push(menuSnapShotData)
+        })
+    }
+    return menuAccounts
+}
+
 export default firebase
