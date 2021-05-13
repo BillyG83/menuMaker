@@ -13,7 +13,7 @@ const AdminPage = ({currentUser}) => (
 		<h1>My Account</h1>
 		{
 			currentUser ?
-			<SignedInUserAdmin currentUser={currentUser} />
+			<SignedInUserAdmin />
 			:
 			<button onClick={signInWithGoogle}>Sign in with Google</button>
 		}		
