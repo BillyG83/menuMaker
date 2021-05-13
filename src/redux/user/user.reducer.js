@@ -11,6 +11,11 @@ const userReducer = (state = INITIAL_STATE, action) => {
                 ...state,
                 currentUser: action.payload
             }
+        case reduxConst.SET_USERS_MENU_ACCOUNTS:
+            return {
+                ...state,
+                accounts: action.payload
+            }
         default:
             return state
     }
