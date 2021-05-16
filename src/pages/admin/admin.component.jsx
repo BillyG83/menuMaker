@@ -10,12 +10,15 @@ import './admin.styles.scss'
 const AdminPage = ({ currentUser }) => (
 	<section className="admin-page">
 		<PageTitle text={'My Account'}/>
-		{
-			currentUser ?
-			<SignedInUserAdmin />
-			:
-			<button onClick={signInWithGoogle}>Sign in with Google</button>
-		}		
+
+		<div className="page-inner">
+			{
+				currentUser ?
+				<SignedInUserAdmin />
+				:
+				<button onClick={signInWithGoogle}>Sign in with Google</button>
+			}	
+		</div>	
 	</section>
 )
 

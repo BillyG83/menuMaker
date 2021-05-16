@@ -7,19 +7,21 @@ import PageTitle from '../../components/page-title/page-title.component.jsx'
 import './menu.styles.scss'
 
 const MenuPage = ({ currentUser }) => (
-	<div className="menu-page">
+	<section className="menu-page">
 		<PageTitle text={'Update Menu'} />
-		<p>user can add, edit, remove products</p>
-		<br />
-		<br />
-		
-		{
-			currentUser ?
-			<button onClick={() => auth.signOut()}>Sign out</button>
-			:
-			<button onClick={signInWithGoogle}>Sign in with Google</button>
-		}
-	</div>
+		<div className="page-inner">
+			<p>user can add, edit, remove products</p>
+			<br />
+			<br />
+			
+			{
+				currentUser ?
+				<button onClick={() => auth.signOut()}>Sign out</button>
+				:
+				<button onClick={signInWithGoogle}>Sign in with Google</button>
+			}
+		</div>
+	</section>
 )
 
 const mapStateToProps = state => ({
