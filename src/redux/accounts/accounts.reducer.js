@@ -1,19 +1,19 @@
 import reduxConst from '../reduxConst.js'
 
 const INITIAL_STATE = {
-    currentUser: null
+    accounts: []
 }
 
-const userReducer = (state = INITIAL_STATE, action) => {
+const accountsReducer = (state = INITIAL_STATE, action) => {
     switch (action.type) {
-        case reduxConst.SET_CURRENT_USER:
+        case reduxConst.SET_USERS_MENU_ACCOUNTS:
             return {
                 ...state,
-                currentUser: action.payload
+                accounts: action.payload
             }
         default:
             return state
     }
 }
 
-export default userReducer
+export default accountsReducer

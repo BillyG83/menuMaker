@@ -7,7 +7,6 @@ class AddMenu extends React.Component {
         super(props)
 
         this.state = {
-            accountInfo: {},
             showForm: false,
         }
     }
@@ -26,7 +25,6 @@ class AddMenu extends React.Component {
     }
 
     updateState(newMenuData) {
-        this.setState({ accountInfo: newMenuData })
         addNewMenu(this.props.userId, newMenuData)
     }
 
@@ -45,7 +43,6 @@ class AddMenu extends React.Component {
                     this.state.showForm ?
                     <NewMenuForm 
                         formSubmitted={this.formSubmitted.bind(this)}
-                        accountInfo={this.state.accountInfo}
                     />
                     :
                     null

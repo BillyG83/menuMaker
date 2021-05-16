@@ -6,8 +6,3 @@ export const selectCurrentUser = createSelector(
     [selectUser],
     user => user.currentUser
 )
-
-export const selectUserAccounts = createSelector(
-    [selectUser],
-    user => user.accounts
-)
