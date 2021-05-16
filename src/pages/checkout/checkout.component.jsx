@@ -1,10 +1,11 @@
 import React from 'react'
+import PageTitle from '../../components/page-title/page-title.component.jsx'
 import StripeCheckout from '../../components/stripe-button/stripe-button.component.jsx'
 import './checkout.styles.scss'
 
 const CheckoutPage = () => (
     <div className="checkout">
-        <h1>Upgrade to pro version</h1>
+        <PageTitle text={'Checkout'} />
         <p>this will give you:</p>
         <ol>
             <li>No ads on your menu</li>

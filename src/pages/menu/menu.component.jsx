@@ -1,15 +1,14 @@
 import React from 'react'
 import { connect } from 'react-redux'
-
 import { selectCurrentUser } from '../../redux/user/user.selectors.js'
 import { signInWithGoogle } from '../../firebase/firebase.js'
 import { auth } from '../../firebase/firebase.js'
-
+import PageTitle from '../../components/page-title/page-title.component.jsx'
 import './menu.styles.scss'
 
 const MenuPage = ({ currentUser }) => (
 	<div className="menu-page">
-		<h1>Your Menu</h1>
+		<PageTitle text={'Update Menu'} />
 		<p>user can add, edit, remove products</p>
 		<br />
 		<br />
