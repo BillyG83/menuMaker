@@ -1,0 +1,30 @@
+.account-list {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 20px 0;
+
+    li {
+        display: block;
+
+        button {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 8px;
+            outline: none;
+            border: none;
+            text-align: left;
+
+            span {
+                padding: 4px;
+            }
+
+            span:first-of-type {
+                font-size: 18px;
+                font-weight: bold;
+            }
+        }
+    }
+}
