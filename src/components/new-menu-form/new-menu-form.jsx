@@ -11,10 +11,13 @@ const NewMenuForm = ({ formSubmitted }) => {
         switch(event.target.id) {
             case 'businessName':
                 businessName = event.target.value
+                return
             case 'businessPostCode':
                 businessPostCode = event.target.value
+                return
             case 'currency':
                 currency = event.target.value
+                return
             default:
                 return
         }
@@ -28,6 +31,7 @@ const NewMenuForm = ({ formSubmitted }) => {
             'createdAt': new Date().toISOString().split('T')[0],
             'currency': currency,
         }
+        console.log(newMenuData);
         formSubmitted(newMenuData)
     }
 
