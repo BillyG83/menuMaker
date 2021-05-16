@@ -1,6 +1,7 @@
 import React from 'react'
 import { addNewMenu } from '../../firebase/firebase.js'
 import NewMenuForm from '../new-menu-form/new-menu-form.jsx'
+import './add-menu.styles.scss'
 
 class AddMenu extends React.Component {
     constructor(props) {
