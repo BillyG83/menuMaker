@@ -28,6 +28,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.page-inner {
+  display: block;
+  padding: 0 16px;
+}
+
 form label {
   display: block;
   margin-bottom: 16px;
