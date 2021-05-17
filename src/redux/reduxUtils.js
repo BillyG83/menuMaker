@@ -27,3 +27,7 @@ export const removeOrderItem = (currentOrder, itemToRemove) => {
         {...orderItem, quantity: orderItem.quantity -1 }
     : orderItem)
 }
+
+export const newMenuAccount = (currentAccounts, newMenuAccount) => {
+    return [...currentAccounts, { ...newMenuAccount }]
+}
