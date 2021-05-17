@@ -1,6 +1,8 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import { addNewMenu } from '../../firebase/firebase.js'
 import NewMenuForm from '../new-menu-form/new-menu-form.jsx'
+import { addNewUsersAccounts } from '../../redux/accounts/accounts.actions'
 import './add-menu.styles.scss'
 
 class AddMenu extends React.Component {
@@ -23,6 +25,7 @@ class AddMenu extends React.Component {
         const Id4 = newMenuData.businessName.replace(/[^A-Z0-9]+/ig, '').toLowerCase()
         newMenuData.businessId = Id1 + Id2 + Id3 + Id4
         this.updateState(newMenuData)
+        this.props.addNewAccountToStore(newMenuData)
     }
 
     updateState(newMenuData) {
@@ -53,4 +56,8 @@ class AddMenu extends React.Component {
     }
 }
 
-export default AddMenu
+const mapDispatchToProps = dispatch => ({
+    addNewAccountToStore: (data) => dispatch(addNewUsersAccounts(data))
+})
+
+export default connect(null, mapDispatchToProps)(AddMenu)
