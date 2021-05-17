@@ -1,0 +1,15 @@
+form.new-menu {
+    background-color: var(--greyLight);
+    margin: 12px 0 16px;
+    padding: 20px 16px 32px;
+
+    label {
+        display: block;
+        margin-bottom: 20px;
+    }
+
+    select {
+        display: block;
+
+    }
+}

@@ -1,4 +1,5 @@
 import React from 'react'
+import './new-menu-form.styles.scss'
 
 const NewMenuForm = ({ formSubmitted }) => {
     let businessName = ''
@@ -36,7 +37,7 @@ const NewMenuForm = ({ formSubmitted }) => {
     }
 
     return(
-        <form>
+        <form className="new-menu">
             <label>
                 Business Name (required)
                 <input 
@@ -60,7 +61,7 @@ const NewMenuForm = ({ formSubmitted }) => {
             </label>
 
             <label>
-                <div>Please select your currency</div>
+                Please select your currency
                 <select id="currency" onChange={inputChanged}>
                     <option value="EUR">Euros €</option>
                     <option value="USD">Dollars $</option>
