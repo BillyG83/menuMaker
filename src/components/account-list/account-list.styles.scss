@@ -4,27 +4,19 @@
     list-style: none;
     padding: 20px 0;
 
+    p {
+        margin-bottom: 12px;
+    }
+
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        flex-direction: row;
+    }
+
     li {
         display: block;
-
-        button {
-            display: flex;
-            justify-content: space-between;
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 8px;
-            outline: none;
-            border: none;
-            text-align: left;
-
-            span {
-                padding: 4px;
-            }
-
-            span:first-of-type {
-                font-size: 18px;
-                font-weight: bold;
-            }
-        }
+        width: calc(50% - 12px);
     }
 }
