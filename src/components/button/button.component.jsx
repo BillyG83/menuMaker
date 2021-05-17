@@ -5,19 +5,22 @@ const Button = (props) => {
     const {
         text,
         clickEvent,
-        Id
+        Id,
+        type,
     } = props
 
     const handleClick = (event) => {
+        if (!clickEvent) return
         console.log('handleClick');
         clickEvent(event.target.id)
     }
 
     return(
         <button 
+            className="button"
             id={Id}
             onClick={handleClick}
-            className="button"
+            type={type ? type : 'button'}
         >
             {text}
         </button>
