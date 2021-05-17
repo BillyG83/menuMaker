@@ -1,0 +1,17 @@
+.button {
+    background-color: var(--blue);
+    border: none;
+    color: var(--white);
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+    outline: none;
+    padding: 8px;
+    text-align: center;
+    transition: filter 0.3s linear;
+    width: 100%;
+
+    &:active {
+        filter: grayscale(50%);
+    }
+}
