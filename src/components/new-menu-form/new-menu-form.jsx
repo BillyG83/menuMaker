@@ -32,7 +32,6 @@ const NewMenuForm = ({ formSubmitted }) => {
             'createdAt': new Date().toISOString().split('T')[0],
             'currency': currency,
         }
-        console.log(newMenuData);
         formSubmitted(newMenuData)
     }
 
