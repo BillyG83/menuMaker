@@ -15,7 +15,6 @@ const AccountList = ({ accounts }) => (
                     >
                         <span>{account.businessName}</span>
                         <span>{account.businessPostCode}</span>
-                        <span>{account.currency}</span>
                     </button>
                 </li>
             ))
