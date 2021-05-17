@@ -7,10 +7,13 @@ import AddMenu from '../add-menu/add-menu.component.jsx'
 import AccountList from '../account-list/account-list.component.jsx'
 
 const SignedInUserAdmin = ({ currentUser, setAccountDatabaseToStore }) => {
-    const userAccounts = getUsersMenus(currentUser.id)
-    userAccounts.then(value => {
+    // getting logged in user's menu account data from database
+    const userAccountDataPromise = getUsersMenus(currentUser.id)
+    // then passing it into the redux store
+    userAccountDataPromise.then(value => {
         setAccountDatabaseToStore(value)
     });
+
     return(
         <section className="user-signed-in">
             <h2>{`Welcome ${currentUser.displayName}`}</h2>
