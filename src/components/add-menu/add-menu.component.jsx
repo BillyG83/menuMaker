@@ -1,8 +1,9 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { addNewMenu } from '../../firebase/firebase.js'
-import NewMenuForm from '../new-menu-form/new-menu-form.jsx'
 import { addNewUsersAccounts } from '../../redux/accounts/accounts.actions'
+import NewMenuForm from '../new-menu-form/new-menu-form.jsx'
+import Button from '../button/button.component.jsx'
 import './add-menu.styles.scss'
 
 class AddMenu extends React.Component {
@@ -19,30 +20,39 @@ class AddMenu extends React.Component {
     }
 
     formSubmitted(newMenuData) {
+        // making the ID of the new menu account
         const Id1 = this.props.userId.slice(-8)
         const Id2 = newMenuData.createdAt.replace(/-/gi, '')
         const Id3 = newMenuData.businessPostCode.replace(/ /gi, '').toLowerCase()
         const Id4 = newMenuData.businessName.replace(/[^A-Z0-9]+/ig, '').toLowerCase()
+        
+        // assigning the ID and other properties
         newMenuData.businessId = Id1 + Id2 + Id3 + Id4
-        this.updateState(newMenuData)
-        this.props.addNewAccountToStore(newMenuData)
+        newMenuData.published = false
+        this.updateData(newMenuData)   
     }
 
-    updateState(newMenuData) {
+    updateData(newMenuData) {
+        // update the database
         addNewMenu(this.props.userId, newMenuData)
+        // update the redux store
+        this.props.addNewAccountToStore(newMenuData)
+        this.toggleForm()
     }
 
     render() {
         return(
             <div className="add-menu">
-                <button onClick={this.toggleForm.bind(this)}>
-                    {
+                <Button 
+                    id="account-card-edit" 
+                    text={
                         this.state.showForm ?
                         'forget it'
                         :
                         'add menu'
                     }
-                </button>
+                    clickEvent={this.toggleForm.bind(this)}
+                />
                 {
                     this.state.showForm ?
                     <NewMenuForm 

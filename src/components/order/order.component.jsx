@@ -10,6 +10,7 @@ import {
 import { toggleOrderHidden } from '../../redux/cart/cart.actions.js'
 
 import OrderItem from '../order-item/order-item.component.jsx'
+import Button from '../button/button.component.jsx'
 import './order.styles.scss'
 
 const Order = (
@@ -25,7 +26,11 @@ const Order = (
             cartItems.length <= 0 ?
                 <div>
                     <p>Oops there is nothing in your order</p>
-                    <button onClick={toggleOrderHidden}>Back to the menu</button>
+                    <Button 
+                        id="back-to-menus" 
+                        text="Back to the menu"
+                        clickEvent={toggleOrderHidden}
+                    />
                 </div>
             :
             <section>
@@ -44,7 +49,10 @@ const Order = (
                 </h3>
             </section>
         }
-        <button>Translate</button>
+        <Button 
+            id="translate-order" 
+            text="Translate"
+        />
     </div>
 )
 

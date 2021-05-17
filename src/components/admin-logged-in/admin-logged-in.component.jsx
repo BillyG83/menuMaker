@@ -5,6 +5,7 @@ import { setUsersAccounts } from '../../redux/accounts/accounts.actions'
 import { auth , getUsersMenus } from '../../firebase/firebase.js'
 import AddMenu from '../add-menu/add-menu.component.jsx'
 import AccountList from '../account-list/account-list.component.jsx'
+import Button from '../button/button.component.jsx'
 
 const SignedInUserAdmin = ({ currentUser, setAccountDatabaseToStore }) => {
     // getting logged in user's menu account data from database
@@ -22,8 +23,12 @@ const SignedInUserAdmin = ({ currentUser, setAccountDatabaseToStore }) => {
                 <AccountList />
                 <AddMenu userId={currentUser.id} />
             </div>
-            
-            <button onClick={() => auth.signOut()}>Sign out</button>
+
+            <Button 
+                id="sign-out-admin" 
+                text="Sign out"
+                clickEvent={() => auth.signOut()}
+            />
         </section>
     )
 }

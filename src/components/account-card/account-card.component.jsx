@@ -11,13 +11,15 @@ const AccountCard = ({ account }) => {
             <h3>{account.businessName}</h3>
             <p>{account.businessPostCode}</p>
             <p>{account.currency}</p>
-            <p className="published">{
-                account.published ?
-                    'Published'
-                    :
-                    'Not Published'
-            }</p>
-            <Button 
+            <p className="published">
+                {
+                    account.published ?
+                        'Published'
+                        :
+                        'Not Published'
+                }
+            </p>
+            <Button
                 id="account-card-edit" 
                 text="Edit"
                 clickEvent={editAccount}

@@ -1,4 +1,5 @@
 import React from 'react'
+import Button from '../button/button.component.jsx'
 import './new-menu-form.styles.scss'
 
 const NewMenuForm = ({ formSubmitted }) => {
@@ -68,7 +69,11 @@ const NewMenuForm = ({ formSubmitted }) => {
                 </select>
             </label>
             
-            <button type="button" onClick={handleSubmit}>Done, easy</button>
+            <Button 
+                id="account-card-edit" 
+                text="Done, easy"
+                clickEvent={handleSubmit}
+            />
         </form>
     )
 }

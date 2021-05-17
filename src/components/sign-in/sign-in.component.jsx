@@ -1,4 +1,5 @@
 import React from 'react'
+import Button from '../button/button.component.jsx'
 import './sign-in.styles.scss'
 
 class SignIn extends React.Component {
@@ -47,7 +48,12 @@ class SignIn extends React.Component {
                         value={this.state.password}
                     />
                 </label>
-                <button type="submit">Submit</button>
+
+                <Button 
+                    id="submit-sign-in" 
+                    text="Submit"
+                    type="submit"
+                />
             </form>
         )
     }

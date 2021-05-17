@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { addItemToOrder } from '../../redux/cart/cart.actions.js'
+import Button from '../button/button.component.jsx'
 import './menu-item.styles.scss'
 
 const MenuItem = ({ data, addItemToOrder }) => (
@@ -8,11 +9,13 @@ const MenuItem = ({ data, addItemToOrder }) => (
 		<h4>{data.name}</h4>
 		<p>{data.detail}</p>
 		<strong className="price">{data.price}</strong>
-		<button 
-			onClick={() => { addItemToOrder(data) }} 
-			className="button"
-			>Add to order
-		</button>
+		
+		<Button 
+			id="add-menu-item" 
+			text="Add to order"
+			clickEvent={() => { addItemToOrder(data) }}
+		/>
+
 		{
 			data.moreInfo && data.moreInfo.length > 0 ?
 			<p>More Info (content component)</p>

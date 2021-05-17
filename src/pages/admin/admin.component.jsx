@@ -2,8 +2,9 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { selectCurrentUser } from '../../redux/user/user.selectors.js'
 import { signInWithGoogle } from '../../firebase/firebase.js'
-import PageTitle from '../../components/page-title/page-title.component.jsx'
 import SignedInUserAdmin from '../../components/admin-logged-in/admin-logged-in.component.jsx'
+import PageTitle from '../../components/page-title/page-title.component.jsx'
+import Button from '../../components/button/button.component.jsx'
 
 import './admin.styles.scss'
 
@@ -16,7 +17,11 @@ const AdminPage = ({ currentUser }) => (
 				currentUser ?
 				<SignedInUserAdmin />
 				:
-				<button onClick={signInWithGoogle}>Sign in with Google</button>
+				<Button 
+					id="google-sign-in" 
+					text="Sign in with Google"
+					clickEvent={signInWithGoogle}
+				/>
 			}	
 		</div>	
 	</section>

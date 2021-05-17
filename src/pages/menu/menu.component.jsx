@@ -4,21 +4,28 @@ import { selectCurrentUser } from '../../redux/user/user.selectors.js'
 import { signInWithGoogle } from '../../firebase/firebase.js'
 import { auth } from '../../firebase/firebase.js'
 import PageTitle from '../../components/page-title/page-title.component.jsx'
+import Button from '../../components/button/button.component.jsx'
 import './menu.styles.scss'
 
 const MenuPage = ({ currentUser }) => (
 	<section className="menu-page">
 		<PageTitle text={'Update Menu'} />
 		<div className="page-inner">
-			<p>user can add, edit, remove products</p>
-			<br />
-			<br />
-			
+			<p>user can add, edit, remove menus</p>
+
 			{
 				currentUser ?
-				<button onClick={() => auth.signOut()}>Sign out</button>
+					<Button 
+						id="google-sign-in" 
+						text="Sign out"
+						clickEvent={auth.signOut()}
+					/>
 				:
-				<button onClick={signInWithGoogle}>Sign in with Google</button>
+					<Button 
+						id="google-sign-in" 
+						text="Sign in with Google"
+						clickEvent={signInWithGoogle}
+					/>
 			}
 		</div>
 	</section>
