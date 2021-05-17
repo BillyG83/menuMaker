@@ -10,8 +10,6 @@ import CheckoutPage from './pages/checkout/checkout.component.jsx'
 import LandingPage from './pages/landing/landing.component.jsx'
 import MenuPage from './pages/menu/menu.component.jsx'
 
-import './App.css';
-
 class App extends React.Component {
 
 	logOffAuth = null

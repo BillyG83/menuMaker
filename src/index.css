@@ -32,13 +32,3 @@ body {
   display: block;
   padding: 0 16px;
 }
-
-form label {
-  display: block;
-  margin-bottom: 16px;
-}
-
-form input {
-  display: block;
-  margin-top: 8px;
-}
