@@ -32,3 +32,15 @@ body {
   display: block;
   padding: 0 16px;
 }
+
+.euro .price:after {
+  content: ' €';
+}
+
+.pound .price:before {
+  content: '£ ';
+}
+
+.dollar .price:before {
+  content: '$ ';
+}
