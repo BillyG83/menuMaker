@@ -26,6 +26,7 @@ class LandingPage extends React.Component {
 			...prevState,
 			'menuSections': menuSections
 		}))
+		document.body.classList.add(this.state.businessCurrency)
 	}
 	
 	render () {
