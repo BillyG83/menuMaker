@@ -19,7 +19,7 @@ const MenuItem = ({ data, addItemToOrder }) => (
 
 		{
 			data.moreInfo && data.moreInfo.length > 0 ?
-			<ShowMoreLess content={data.moreInfo} />
+			<ShowMoreLess title="More Info" content={data.moreInfo} />
 			:
 			``
 		}
