@@ -1,17 +1,28 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './show-more-less.styles.scss'
 
-const ShowMoreLess = ({ content }) => {
-    const isOpen = false
-    const handleClick = () => {
-        isOpen = !isOpen
+const ShowMoreLess = ({ title, content }) => {
+    const [isOpen, toggleOpen] = useState(false)
+    const [a11yMessage, setA11yMessage] = useState('Show more information')
+
+    const handleClick = (event) => {
+        event.preventDefault()
+        setA11yMessage(isOpen ? 'Show more information' : 'Hide the extra information')
+        toggleOpen(!isOpen)
     }
+
     return (
         <div className={`show-more-less ${isOpen ? 'open' : 'closed'}`}>
             <div className="show-more-less__header">
-                <h4>More Info</h4>
+                <h4>{title}</h4>
                 <button onClick={handleClick}>
-                    <span>&gt;</span>
+                    {a11yMessage}
+                    <span 
+                        aria-hidden="true"
+                        style={{ 
+                            backgroundImage: `url("img/arrow.svg")` 
+                        }}
+                    ></span>
                 </button>
             </div>
             <div className="show-more-less__content">
