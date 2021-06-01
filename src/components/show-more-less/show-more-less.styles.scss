@@ -1,0 +1,20 @@
+.show-more-less {
+    border-bottom: 1px solid var(--grey);
+    margin-bottom: 12px;
+
+    .show-more-less__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        button {
+            padding: 5px;
+
+            span {
+                transform: rotate(90deg);
+                font-weight: 900;
+                font-size: 16px;
+            }
+        }
+    }
+}
