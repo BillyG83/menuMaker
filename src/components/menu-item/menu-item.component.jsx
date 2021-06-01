@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { addItemToOrder } from '../../redux/cart/cart.actions.js'
 import Button from '../button/button.component.jsx'
+import ShowMoreLess from '../show-more-less/show-more-less.component.jsx'
 import './menu-item.styles.scss'
 
 const MenuItem = ({ data, addItemToOrder }) => (
@@ -18,7 +19,7 @@ const MenuItem = ({ data, addItemToOrder }) => (
 
 		{
 			data.moreInfo && data.moreInfo.length > 0 ?
-			<p>More Info (content component)</p>
+			<ShowMoreLess content={data.moreInfo} />
 			:
 			``
 		}
