@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { memo } from 'react'
 import Nav from '../nav/nav.component.jsx'
 import './header.styles.scss'
 
-const Header = ({ businessName, businessSocial, businessInfo }) => {
+const Header = React.memo(({ businessName, businessSocial, businessInfo }) => {
 	return(
 		<header className="header">
 			<h1>{ businessName }</h1>
@@ -12,6 +12,6 @@ const Header = ({ businessName, businessSocial, businessInfo }) => {
 			/>
 		</header>
 	)
-}
+})
 
 export default Header

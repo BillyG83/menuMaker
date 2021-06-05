@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { memo } from 'react'
 import { connect } from 'react-redux'
 import { addItemToOrder } from '../../redux/cart/cart.actions.js'
 import Button from '../button/button.component.jsx'
 import ShowMoreLess from '../show-more-less/show-more-less.component.jsx'
 import './menu-item.styles.scss'
 
-const MenuItem = ({ data, addItemToOrder }) => (
+const MenuItem = React.memo(({ data, addItemToOrder }) => (
 	<li className="menu-item">
 		<h4>{data.name}</h4>
 		<p>{data.detail}</p>
@@ -36,7 +36,7 @@ const MenuItem = ({ data, addItemToOrder }) => (
 			``
 		}
 	</li>
-)
+))
 
 const mapDispatchToProps = dispatch => ({
 	addItemToOrder: data => dispatch(addItemToOrder(data))
