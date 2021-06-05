@@ -7,7 +7,7 @@ const MenuCollection = ({ businessMenu }) => {
 		<main className="menu">
 			<div className="menu-collection">
 				{
-					businessMenu.map((menuSection, i) => (
+					businessMenu?.map((menuSection, i) => (
 						<MenuSection 
 							sectionName={menuSection.catName}
 							sectionItems={menuSection.catItems}
