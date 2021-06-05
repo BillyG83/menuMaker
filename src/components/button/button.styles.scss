@@ -14,4 +14,10 @@
     &:active {
         filter: grayscale(50%);
     }
+
+    &.button--icon {
+        padding: 0;
+        height: 30px;
+        width: 30px;
+    }
 }
