@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { connect } from 'react-redux'
 import { addNewMenu } from '../../firebase/firebase.js'
 import { addNewUsersAccounts } from '../../redux/accounts/accounts.actions'
@@ -6,22 +6,16 @@ import NewMenuForm from '../new-menu-form/new-menu-form.jsx'
 import Button from '../button/button.component.jsx'
 import './add-menu.styles.scss'
 
-class AddMenu extends React.Component {
-    constructor(props) {
-        super(props)
+const AddMenu = (props) => {
+    const [showForm, setShowForm] = useState(false)
 
-        this.state = {
-            showForm: false,
-        }
+    const toggleForm = () => {
+        setShowForm({ showForm: !showForm })
     }
 
-    toggleForm() {
-        this.setState({ showForm: !this.state.showForm })
-    }
-
-    formSubmitted(newMenuData) {
+    const formSubmitted = (newMenuData) => {
         // making the ID of the new menu account
-        const Id1 = this.props.userId.slice(-8)
+        const Id1 = props.userId.slice(-8)
         const Id2 = newMenuData.createdAt.replace(/-/gi, '')
         const Id3 = newMenuData.businessPostCode.replace(/ /gi, '').toLowerCase()
         const Id4 = newMenuData.businessName.replace(/[^A-Z0-9]+/ig, '').toLowerCase()
@@ -29,41 +23,39 @@ class AddMenu extends React.Component {
         // assigning the ID and other properties
         newMenuData.businessId = Id1 + Id2 + Id3 + Id4
         newMenuData.published = false
-        this.updateData(newMenuData)   
+        updateData(newMenuData)   
     }
 
-    updateData(newMenuData) {
+    const updateData = (newMenuData) => {
         // update the database
-        addNewMenu(this.props.userId, newMenuData)
+        addNewMenu(props.userId, newMenuData)
         // update the redux store
-        this.props.addNewAccountToStore(newMenuData)
-        this.toggleForm()
+        props.addNewAccountToStore(newMenuData)
+        toggleForm()
     }
 
-    render() {
-        return(
-            <div className="add-menu">
-                <Button 
-                    id="account-card-edit" 
-                    text={
-                        this.state.showForm ?
-                        'forget it'
-                        :
-                        'add menu'
-                    }
-                    clickEvent={this.toggleForm.bind(this)}
-                />
-                {
-                    this.state.showForm ?
-                    <NewMenuForm 
-                        formSubmitted={this.formSubmitted.bind(this)}
-                    />
+    return(
+        <div className="add-menu">
+            <Button 
+                id="account-card-edit" 
+                text={
+                    showForm ?
+                    'forget it'
                     :
-                    null
+                    'add menu'
                 }
-            </div>
-        )
-    }
+                clickEvent={toggleForm}
+            />
+            {
+                showForm ?
+                <NewMenuForm 
+                    formSubmitted={formSubmitted}
+                />
+                :
+                null
+            }
+        </div>
+    )
 }
 
 const mapDispatchToProps = dispatch => ({
