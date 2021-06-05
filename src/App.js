@@ -10,6 +10,8 @@ import CheckoutPage from './pages/checkout/checkout.component.jsx'
 import LandingPage from './pages/landing/landing.component.jsx'
 import MenuPage from './pages/menu/menu.component.jsx'
 
+export const ThemeContext = React.createContext('light');
+
 class App extends React.Component {
 
 	logOffAuth = null
@@ -43,31 +45,33 @@ class App extends React.Component {
 
 	render() {
 		return (
-			<div className="app">
-				<Route 
-					exact={true} 
-					path='/' 
-					component={LandingPage}
-				/>
-	
-				<Route 
-					exact={true} 
-					path='/admin' 
-					component={AdminPage}
-				/>
+			<ThemeContext.Provider value='dark'>
+				<div className="app">
+					<Route 
+						exact={true} 
+						path='/' 
+						component={LandingPage}
+					/>
+		
+					<Route 
+						exact={true} 
+						path='/admin' 
+						component={AdminPage}
+					/>
 
-				<Route 
-					exact={true} 
-					path='/checkout' 
-					component={CheckoutPage}
-				/>
+					<Route 
+						exact={true} 
+						path='/checkout' 
+						component={CheckoutPage}
+					/>
 
-				<Route 
-					exact={true} 
-					path='/menu' 
-					component={MenuPage}
-				/>
-			</div>
+					<Route 
+						exact={true} 
+						path='/menu' 
+						component={MenuPage}
+					/>
+				</div>
+			</ThemeContext.Provider>
 		)
 	}
 }

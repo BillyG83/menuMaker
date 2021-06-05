@@ -1,7 +1,11 @@
-import React from 'react'
+import React, { memo, useContext } from 'react'
+import { ThemeContext } from '../../App.js'
 import './button.styles.scss'
 
-const Button = (props) => {
+const Button = memo((props) => {
+    Button.displayName = 'Button'
+    const theme = useContext(ThemeContext)
+
     const {
         text,
         clickEvent,
@@ -17,7 +21,7 @@ const Button = (props) => {
 
     return(
         <button 
-            className="button"
+            className={`button button--${theme}`}
             id={Id}
             onClick={handleClick}
             type={type ? type : 'button'}
@@ -25,6 +29,6 @@ const Button = (props) => {
             {text}
         </button>
     )
-}
+})
 
 export default Button
