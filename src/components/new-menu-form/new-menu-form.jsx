@@ -26,7 +26,7 @@ const NewMenuForm = ({ formSubmitted }) => {
     }
 
     const handleSubmit = (event) => {
-        event.preventDefault()
+        event && event.preventDefault()
         const newMenuData = {
             'businessName': businessName,
             'businessPostCode': businessPostCode,
