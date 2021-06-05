@@ -1,4 +1,4 @@
-import { memo } from 'react'
+import React, { memo } from 'react'
 import './page-title.styles.scss'
 
 const PageTitle = memo(({ text }) => (

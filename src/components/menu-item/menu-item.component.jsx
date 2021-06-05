@@ -1,4 +1,4 @@
-import { memo } from 'react'
+import React, { memo } from 'react'
 import { connect } from 'react-redux'
 import { addItemToOrder } from '../../redux/cart/cart.actions.js'
 import Button from '../button/button.component.jsx'

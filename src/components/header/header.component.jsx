@@ -1,4 +1,4 @@
-import { memo } from 'react'
+import React, { memo } from 'react'
 import Nav from '../nav/nav.component.jsx'
 import './header.styles.scss'
 

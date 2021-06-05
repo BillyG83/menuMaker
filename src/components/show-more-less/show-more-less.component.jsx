@@ -1,4 +1,4 @@
-import { useState, memo } from 'react'
+import React, { useState, memo } from 'react'
 import './show-more-less.styles.scss'
 
 const ShowMoreLess = memo(({ title, content }) => {

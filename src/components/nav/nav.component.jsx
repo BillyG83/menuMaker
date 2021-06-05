@@ -1,9 +1,9 @@
-import { memo } from 'react'
+import React, { memo } from 'react'
 import './nav.styles.scss'
 
 const Nav = memo(({ businessSocial, businessInfo }) => {
 	Nav.displayName = 'Nav'
-	
+
 	const clickHandle = (event) => {
 		console.log(event.target.id);
 	}

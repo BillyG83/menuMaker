@@ -1,4 +1,4 @@
-import { memo } from 'react'
+import React, { memo } from 'react'
 import './menu-select.styles.scss'
 
 const MenuSelect = memo(({ menuSections }) => {
