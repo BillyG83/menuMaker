@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Header from '../../components/header/header.component.jsx'
 import MenuSelect from '../../components/menu-select/menu-select.component.jsx'
 import MenuCollection from '../../components/menu-collection/menu-collection.component.jsx'
@@ -8,44 +8,36 @@ import './landing.styles.scss'
 
 import mockData from '../../mockData.js'
 
-class LandingPage extends React.Component {
-	constructor() {
-		super()
+const LandingPage = () => {
+	const [menuData, setMenuData] = useState(mockData.accounts[0])
 
-		// currently getting an account from a business
-		// mocking a successful QR scan and app call
-		this.state = mockData.accounts[0]
-	}
-
-	componentDidMount() {
+	useEffect(() => {
 		let menuSections = []
-		this.state.businessMenu.forEach(menuSection => {
+		menuData?.businessMenu?.forEach(menuSection => {
 			menuSections.push(menuSection.catName)
 		})
-		this.setState(prevState => ({
+		setMenuData(prevState => ({
 			...prevState,
 			'menuSections': menuSections
 		}))
-		document.body.classList.add(this.state.businessCurrency)
-	}
+		document.body.classList.add(menuData?.businessCurrency)
+	}, [])
 	
-	render () {
-		return(
-			<div className="landing-page">
-				<Header 
-					businessName={this.state.businessName} 
-					businessSocial={this.state.businessSocial} 
-					businessInfo={this.state.businessInfo}	
-				/>
-				<MenuSelect menuSections={this.state.menuSections} />
-				<MenuCollection 
-					businessMenu={this.state.businessMenu.sort((a, b) => (a.catOrder > b.catOrder) ? 1 : -1)}
-				/>
-				<Cart />
-				<Order />
-			</div>
-		)
-	}
+	return(
+		<div className="landing-page">
+			<Header 
+				businessName={menuData?.businessName} 
+				businessSocial={menuData?.businessSocial} 
+				businessInfo={menuData?.businessInfo}	
+			/>
+			<MenuSelect menuSections={menuData?.menuSections} />
+			<MenuCollection 
+				businessMenu={menuData?.businessMenu?.sort((a, b) => (a.catOrder > b.catOrder) ? 1 : -1)}
+			/>
+			<Cart />
+			<Order />
+		</div>
+	)
 }
 
 export default LandingPage
