@@ -1,7 +1,8 @@
-import React from 'react'
+import { memo } from 'react'
 import './menu-select.styles.scss'
 
-const MenuSelect = ({ menuSections }) => {
+const MenuSelect = memo(({ menuSections }) => {
+	MenuSelect.displayName = 'MenuSelect'
 	return(
 		<nav className="menu-select">
 			{
@@ -18,6 +19,6 @@ const MenuSelect = ({ menuSections }) => {
 			}
 		</nav>
 	)
-}
+})
 
 export default MenuSelect

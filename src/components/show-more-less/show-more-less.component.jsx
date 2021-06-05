@@ -1,7 +1,9 @@
-import React, { useState } from 'react'
+import { useState, memo } from 'react'
 import './show-more-less.styles.scss'
 
-const ShowMoreLess = ({ title, content }) => {
+const ShowMoreLess = memo(({ title, content }) => {
+    ShowMoreLess.displayName = 'ShowMoreLess'
+
     const [isOpen, toggleOpen] = useState(false)
     const [a11yMessage, setA11yMessage] = useState('Show more information')
 
@@ -30,6 +32,6 @@ const ShowMoreLess = ({ title, content }) => {
             </div>
         </div>
     )
-}
+})
 
 export default ShowMoreLess

@@ -1,7 +1,9 @@
-import React from 'react'
+import { memo } from 'react'
 import './nav.styles.scss'
 
-const Nav = ({ businessSocial, businessInfo }) => {
+const Nav = memo(({ businessSocial, businessInfo }) => {
+	Nav.displayName = 'Nav'
+	
 	const clickHandle = (event) => {
 		console.log(event.target.id);
 	}
@@ -33,6 +35,6 @@ const Nav = ({ businessSocial, businessInfo }) => {
 			</ul>
 		</nav>
 	)
-}
+})
 
 export default Nav
