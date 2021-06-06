@@ -5,10 +5,10 @@ import { connect } from 'react-redux'
 import { auth, createUserProfileDocument } from './firebase/firebase.js'
 import { setCurrentUser } from './redux/user/user.actions.js'
 
-import AdminPage from './pages/admin/admin.component.jsx'
-import CheckoutPage from './pages/checkout/checkout.component.jsx'
-import LandingPage from './pages/landing/landing.component.jsx'
-import MenuPage from './pages/menu/menu.component.jsx'
+const AdminPage = React.lazy(() => import('./pages/admin/admin.component.jsx'))
+const CheckoutPage = React.lazy(() => import('./pages/checkout/checkout.component.jsx'))
+const LandingPage = React.lazy(() => import('./pages/landing/landing.component.jsx'))
+const MenuPage = React.lazy(() => import('./pages/menu/menu.component.jsx'))
 
 export const ThemeContext = React.createContext('light');
 
@@ -47,29 +47,31 @@ class App extends React.Component {
 		return (
 			<ThemeContext.Provider value='dark'>
 				<div className="app">
-					<Route 
-						exact={true} 
-						path='/' 
-						component={LandingPage}
-					/>
-		
-					<Route 
-						exact={true} 
-						path='/admin' 
-						component={AdminPage}
-					/>
+					<React.Suspense fallback={<p>Loading...</p>}>
+						<Route 
+							exact={true} 
+							path='/' 
+							component={LandingPage}
+						/>
+			
+						<Route 
+							exact={true} 
+							path='/admin' 
+							component={AdminPage}
+						/>
 
-					<Route 
-						exact={true} 
-						path='/checkout' 
-						component={CheckoutPage}
-					/>
+						<Route 
+							exact={true} 
+							path='/checkout' 
+							component={CheckoutPage}
+						/>
 
-					<Route 
-						exact={true} 
-						path='/menu' 
-						component={MenuPage}
-					/>
+						<Route 
+							exact={true} 
+							path='/menu' 
+							component={MenuPage}
+						/>
+					</React.Suspense>
 				</div>
 			</ThemeContext.Provider>
 		)
