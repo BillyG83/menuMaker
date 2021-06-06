@@ -4,6 +4,8 @@ import './header.styles.scss'
 
 const Header = memo(({ businessName, businessSocial, businessInfo }) => {
 	Header.displayName = 'Header'
+	if (!businessName) throw new Error('no menu data')
+	
 	return(
 		<header className="header">
 			<h1>{ businessName }</h1>
