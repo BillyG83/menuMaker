@@ -18,7 +18,9 @@ const MenuItem = memo(({ data, addItemToOrder }) => {
 				id="add-menu-item" 
 				text="Add to order"
 				clickEvent={() => { addItemToOrder(data) }}
-			/>
+			>
+				Yummy, I want!
+			</Button>
 
 			{
 				data.moreInfo && data.moreInfo.length > 0 ?

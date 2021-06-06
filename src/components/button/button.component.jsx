@@ -37,6 +37,7 @@ const Button = memo((props) => {
 
     return(
         <button 
+        aria-label={text && text}
             className={`
                 button 
                 button--${theme} 
@@ -50,7 +51,9 @@ const Button = memo((props) => {
                 getIcon(icon)
                 : null
             }
-            {text && text}
+            {
+                props.children || text
+            }
         </button>
     )
 })
