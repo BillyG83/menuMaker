@@ -1,17 +1,30 @@
 .menu-select {
     background-color: var(--blue);
     display: block;
-    padding: 8px;
-    text-align: center;
-    text-transform: uppercase;
+    padding: 0 4px;
     position: -webkit-sticky; /* Safari */
     position: sticky;
+    text-align: center;
+    text-transform: uppercase;
     top: 0;
     z-index: 2;
 
+    ul {
+        display: flex;
+        list-style: none;
+    }
+
+    li {
+        display: block;
+        margin: 0 2px;
+        width: fit-content;
+    }
+
     a {
         color: var(--white);
-        margin: 4px;
+        display: block;
+        padding: 4px;
         text-decoration: none;
+        width: fit-content;
     }
 }

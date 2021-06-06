@@ -8,12 +8,16 @@
         text-align: center;
         text-transform: uppercase;
         position: sticky;
-        top: 34px;
+        top: 24px;
         z-index: 1;
+    }
+
+    &:first-of-type ul {
+        padding-top: 20px;
     }
 }
 
 .menu-section__list {
     list-style: none;
-    padding: 16px 16px 46px;
+    padding: 36px 16px 54px;
 }
