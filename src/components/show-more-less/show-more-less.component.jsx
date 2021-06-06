@@ -17,7 +17,11 @@ const ShowMoreLess = memo(({ title, content }) => {
         <div className={`show-more-less ${isOpen ? 'open' : 'closed'}`}>
             <div className="show-more-less__header">
                 <h4>{title}</h4>
-                <button onClick={handleClick}>
+                <button 
+                    aria-controls="sml-content"
+                    aria-expanded={isOpen} 
+                    onClick={handleClick}
+                >
                     {a11yMessage}
                     <span 
                         aria-hidden="true"
@@ -27,7 +31,7 @@ const ShowMoreLess = memo(({ title, content }) => {
                     ></span>
                 </button>
             </div>
-            <div className="show-more-less__content">
+            <div id="sml-content" className="show-more-less__content">
                 <p>{ content }</p>
             </div>
         </div>
