@@ -10,10 +10,9 @@ const MenuSelect = memo(({ menuSections }) => {
 			{
 				menuSections && menuSections.map((menuSection, i) => {
 					return (
-						<li>
+						<li key={`menu-select-${i}`}>
 							<a 
 								href={i === 0 ? '#root' : `#menu-section-${menuSection}`}
-								key={i}
 							>
 								{menuSection}
 							</a>

@@ -15,6 +15,11 @@
     &:first-of-type ul {
         padding-top: 20px;
     }
+
+    &:last-of-type ul {
+        padding-bottom: 0px;
+        min-height: calc(100vh - 44px);
+    }
 }
 
 .menu-section__list {
