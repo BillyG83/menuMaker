@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { selectCurrentUser } from '../../redux/user/user.selectors.js'
 import { signInWithGoogle } from '../../firebase/firebase.js'
@@ -23,7 +24,10 @@ const AdminPage = ({ currentUser }) => (
 					clickEvent={signInWithGoogle}
 				/>
 			}	
-		</div>	
+		</div>
+		
+		<Link className="button" to="/">View my menu</Link>
+
 	</section>
 )
 
