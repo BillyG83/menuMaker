@@ -16,13 +16,17 @@ const AddMenu = (props) => {
     const formSubmitted = (newMenuData) => {
         // making the ID of the new menu account
         const Id1 = props.userId.slice(-8)
-        const Id2 = newMenuData.createdAt.replace(/-/gi, '')
+        const Id2 = newMenuData.businessJoinDate.replace(/-/gi, '')
         const Id3 = newMenuData.businessPostCode.replace(/ /gi, '').toLowerCase()
         const Id4 = newMenuData.businessName.replace(/[^A-Z0-9]+/ig, '').toLowerCase()
         
         // assigning the ID and other properties
         newMenuData.businessId = Id1 + Id2 + Id3 + Id4
         newMenuData.published = false
+        newMenuData.businessInfo = {}
+        newMenuData.businessSocial = []
+        newMenuData.businessMenu = []
+
         updateData(newMenuData)   
     }
 

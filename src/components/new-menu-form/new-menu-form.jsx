@@ -30,8 +30,8 @@ const NewMenuForm = ({ formSubmitted }) => {
         const newMenuData = {
             'businessName': businessName,
             'businessPostCode': businessPostCode,
-            'createdAt': new Date().toISOString().split('T')[0],
-            'currency': currency,
+            'businessJoinDate': new Date().toISOString().split('T')[0],
+            'businessCurrency': currency,
         }
         formSubmitted(newMenuData)
     }
