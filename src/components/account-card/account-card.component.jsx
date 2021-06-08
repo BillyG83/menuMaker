@@ -1,11 +1,17 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 import Button from '../button/button.component.jsx'
+import { selectMenuToEdit } from '../../redux/accounts/accounts.actions'
 import './account-card-styles.scss'
 
-const AccountCard = ({ account }) => {
+const AccountCard = (props) => {
+    const { account, accountToEdit } = props
+
     const editAccount = () => {
-        console.log('editAccount clicked');
+        accountToEdit(account);
     }
+
     return(
         <div className="account-card">
             <h3>{account.businessName}</h3>
@@ -19,13 +25,15 @@ const AccountCard = ({ account }) => {
                         'Not Published'
                 }
             </p>
-            <Button
-                id="account-card-edit" 
-                text="Edit"
-                clickEvent={editAccount}
-            />
+
+            <Link onClick={editAccount} className="button" to="/menu">Edit</Link>
         </div>
     )
 }
 
-export default AccountCard
+const mapDispatchToProps = dispatch => ({
+	accountToEdit: account => dispatch(selectMenuToEdit(account))
+})
+
+
+export default connect(null, mapDispatchToProps)(AccountCard)
