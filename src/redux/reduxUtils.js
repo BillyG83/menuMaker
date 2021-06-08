@@ -29,5 +29,10 @@ export const removeOrderItem = (currentOrder, itemToRemove) => {
 }
 
 export const newMenuAccount = (currentAccounts, newMenuAccount) => {
-    return [...currentAccounts, { ...newMenuAccount }]
+    if(currentAccounts) {
+        return [...currentAccounts, { ...newMenuAccount }]
+    } else {
+        return [{ ...newMenuAccount }]
+    }
+    
 }
