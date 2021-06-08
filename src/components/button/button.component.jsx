@@ -18,8 +18,7 @@ const Button = memo((props) => {
 
     const handleClick = (event) => {
         if (!clickEvent) return
-        console.log('handleClick');
-        clickEvent(event.target.id)
+        clickEvent()
     }
 
     const getIcon = (icon) => {
@@ -47,9 +46,8 @@ const Button = memo((props) => {
             onClick={handleClick}
             type={type ? type : 'button'}
         >
-            {   icon ?
-                getIcon(icon)
-                : null
+            {
+                icon && getIcon(icon)
             }
             {
                 props.children || text
