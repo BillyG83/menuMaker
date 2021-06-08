@@ -19,11 +19,11 @@ const mockData = {
                 businessPhone: "07712345678",
                 businessWebUrl: "https://www.google.com/",
             },
-            businessSocial: {
-                facebook: 'https://www.facebook.com/',
-                twitter: 'https://twitter.com/',
-                instagram: 'https://instagram.com/',
-            },
+            businessSocial: [
+                { name: 'facebook', url: 'https://www.facebook.com/' },
+                { name: 'twitter', url: 'https://twitter.com/' },
+                { name: 'instagram', url: 'https://instagram.com/' },
+            ],
             businessMenu: [
                 {
                     catName: "Drinks",
