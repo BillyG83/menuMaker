@@ -18,7 +18,7 @@ const Button = memo((props) => {
 
     const handleClick = (event) => {
         if (!clickEvent) return
-        clickEvent()
+        clickEvent(event)
     }
 
     const getIcon = (icon) => {
@@ -42,7 +42,7 @@ const Button = memo((props) => {
                 button--${theme} 
                 ${icon ? 'button--icon' : ''}
             `}
-            id={Id}
+            id={`${Id}`}
             onClick={handleClick}
             type={type ? type : 'button'}
         >
