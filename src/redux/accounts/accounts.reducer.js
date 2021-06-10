@@ -3,7 +3,7 @@ import { newMenuAccount } from '../reduxUtils.js'
 
 const INITIAL_STATE = {
     accounts: [],
-    selectedAccount: {},
+    accountToEdit: {},
 }
 
 const accountsReducer = (state = INITIAL_STATE, action) => {
@@ -21,7 +21,7 @@ const accountsReducer = (state = INITIAL_STATE, action) => {
         case reduxConst.SELECT_MENU_TO_EDIT:
             return {
                 ...state,
-                selectedAccount: action.payload,
+                accountToEdit: action.payload,
             }
         default:
             return state
