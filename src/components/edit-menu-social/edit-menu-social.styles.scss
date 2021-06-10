@@ -1,0 +1,14 @@
+.menu-social {
+    display: block;
+    padding: 24px 0;
+
+    .menu-social__warning {
+        display: flex;
+
+        svg {
+            color: var(--yellow);
+            margin-left: 8px;
+            margin-right: 8px;
+        }
+    }
+}
