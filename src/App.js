@@ -9,6 +9,7 @@ const AdminPage = React.lazy(() => import('./pages/admin/admin.component.jsx'))
 const CheckoutPage = React.lazy(() => import('./pages/checkout/checkout.component.jsx'))
 const LandingPage = React.lazy(() => import('./pages/landing/landing.component.jsx'))
 const MenuPage = React.lazy(() => import('./pages/menu/menu.component.jsx'))
+const HomePage = React.lazy(() => import('./pages/home/home.component.jsx'))
 
 export const ThemeContext = React.createContext('light');
 
@@ -62,14 +63,20 @@ class App extends React.Component {
 
 						<Route 
 							exact={true} 
-							path='/checkout' 
-							component={CheckoutPage}
+							path='/home' 
+							component={HomePage}
 						/>
 
 						<Route 
 							exact={true} 
 							path='/menu' 
 							component={MenuPage}
+						/>
+
+						<Route 
+							exact={true} 
+							path='/checkout' 
+							component={CheckoutPage}
 						/>
 					</React.Suspense>
 				</div>
