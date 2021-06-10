@@ -1,7 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
-import Button from '../button/button.component.jsx'
 import { selectMenuToEdit } from '../../redux/accounts/accounts.actions'
 import './account-card-styles.scss'
 
@@ -26,7 +25,13 @@ const AccountCard = (props) => {
                 }
             </p>
 
-            <Link onClick={editAccount} className="button" to="/menu">Edit</Link>
+            <Link 
+                onClick={editAccount} 
+                className="button" 
+                to="/menu"
+            >
+                Edit Menu
+            </Link>
         </div>
     )
 }
