@@ -47,39 +47,41 @@ class App extends React.Component {
 	render() {
 		return (
 			<ThemeContext.Provider value='dark'>
-				<div className="app">
-					<React.Suspense fallback={<p>Loading...</p>}>
-						<Route 
-							exact={true} 
-							path='/' 
-							component={LandingPage}
-						/>
-			
-						<Route 
-							exact={true} 
-							path='/admin' 
-							component={AdminPage}
-						/>
+				<React.StrictMode>
+					<div className="app">
+						<React.Suspense fallback={<p>Loading...</p>}>
+							<Route 
+								exact={true} 
+								path='/' 
+								component={LandingPage}
+							/>
+				
+							<Route 
+								exact={true} 
+								path='/admin' 
+								component={AdminPage}
+							/>
 
-						<Route 
-							exact={true} 
-							path='/home' 
-							component={HomePage}
-						/>
+							<Route 
+								exact={true} 
+								path='/home' 
+								component={HomePage}
+							/>
 
-						<Route 
-							exact={true} 
-							path='/menu' 
-							component={MenuPage}
-						/>
+							<Route 
+								exact={true} 
+								path='/menu' 
+								component={MenuPage}
+							/>
 
-						<Route 
-							exact={true} 
-							path='/checkout' 
-							component={CheckoutPage}
-						/>
-					</React.Suspense>
-				</div>
+							<Route 
+								exact={true} 
+								path='/checkout' 
+								component={CheckoutPage}
+							/>
+						</React.Suspense>
+					</div>
+				</React.StrictMode>
 			</ThemeContext.Provider>
 		)
 	}
