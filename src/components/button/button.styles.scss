@@ -21,4 +21,24 @@
         height: 30px;
         width: 30px;
     }
+
+    &.button--blueDark {
+        background-color: var(--blueDark);
+    }
+
+    &.button--greyDark {
+        background-color: var(--greyDark);
+    }
+
+    &.button--green {
+        background-color: var(--green);
+    }
+
+    &.button--purple {
+        background-color: var(--purple);
+    }
+
+    &.button--fit-content {
+        max-width: fit-content;
+    }
 }
