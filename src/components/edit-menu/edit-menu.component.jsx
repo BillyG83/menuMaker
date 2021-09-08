@@ -14,7 +14,7 @@ const EditMenu = ({ menuData }) => {
     const [ businessSocial, setBusinessSocial ]= useState(menuData.businessSocial)
 
     const handleClick = (event) => {
-        console.log(event);
+        console.log('businessSocial = ', businessSocial);
     }
 
     return(
@@ -35,9 +35,11 @@ const EditMenu = ({ menuData }) => {
                 />
                 : null
             }
-            
 
-            <Button clickEvent={handleClick}>
+            <Button 
+                clickEvent={handleClick}
+                color="green"
+            >
                 { published ? 'Update'
                 : 'Publish'
                 }
