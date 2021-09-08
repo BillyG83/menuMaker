@@ -5,6 +5,8 @@ const INITIAL_STATE = {
 }
 
 const userReducer = (state = INITIAL_STATE, action) => {
+    if (!action.payload) return state
+    
     switch (action.type) {
         case reduxConst.SET_CURRENT_USER:
             return {
