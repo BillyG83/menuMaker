@@ -15,12 +15,12 @@ const MenuItem = memo(({ data, addItemToOrder }) => {
 			<strong className="price">{data.price}</strong>
 			
 			<Button 
-				id="add-menu-item" 
+				Id="add-menu-item" 
 				text="Add to order"
 				clickEvent={() => { addItemToOrder(data) }}
-			>
-				Yummy, I want!
-			</Button>
+				icon="add"
+				color="green"
+			/>
 
 			{
 				data.moreInfo && data.moreInfo.length > 0 ?
