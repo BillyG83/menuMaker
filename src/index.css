@@ -4,6 +4,7 @@
   --blueDark: #2f3640;
   --green: #44bd32;
   --grey: #919191;
+  --greyDark: #515151;
   --greyLight: #e2e5e6;
   --orange: #e67e22;
   --purple: #8e44ad;
@@ -44,4 +45,30 @@ body {
 
 .dollar .price:before {
   content: '$ ';
+}
+
+/* TYPOGRAPHY */
+
+h1 {
+  font-size: 28px;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+
+h3 {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+p {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+/* HELPERS */
+.no-click {
+  pointer-events: none;
 }
