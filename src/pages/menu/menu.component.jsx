@@ -39,6 +39,7 @@ const MenuPage = ({ currentUser, accountToEdit }) => {
 								id="google-sign-in" 
 								text="Sign out"
 								clickEvent={auth.signOut()}
+								color="purple"
 							/>
 						</div>
 					:
