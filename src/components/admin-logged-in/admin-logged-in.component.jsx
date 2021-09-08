@@ -28,6 +28,7 @@ const SignedInUserAdmin = ({ currentUser, setAccountDatabaseToStore }) => {
                 id="sign-out-admin" 
                 text="Sign out"
                 clickEvent={() => auth.signOut()}
+                color="purple"
             />
         </section>
     )
