@@ -11,6 +11,7 @@
     text-decoration: none;
     transition: filter 0.3s linear;
     width: 100%;
+    position: relative;
 
     &:active {
         filter: grayscale(50%);
@@ -40,5 +41,57 @@
 
     &.button--fit-content {
         max-width: fit-content;
+    }
+
+    &:before {
+        display: block;
+        height: 2px;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.1);
+        top: 0;
+        left: 0;
+        content: '';
+        position: absolute;
+        transition: height 0.1s ease-out;
+    }
+
+    &:after {
+        display: block;
+        height: 2px;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.1);
+        bottom: 0;
+        left: 0;
+        content: '';
+        position: absolute;
+        transition: height 0.1s ease-out;
+    }
+
+    &:hover {
+        &:before {
+            height: 4px;
+        }
+        &:after {
+            height: 4px;
+        }
+    }
+
+    &:active {
+        &:before {
+            height: 0;
+        }
+        &:after {
+            height: 0;
+        }
+    }
+
+    &:disabled {
+        background-color: var(--greyLight);
+        color: var(--grey);
+        pointer-events: none;
+
+        &:after {
+            background-color: rgba(0, 0, 0, 0.03);
+        }
     }
 }

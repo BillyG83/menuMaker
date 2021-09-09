@@ -12,6 +12,7 @@ const Button = memo((props) => {
         Id,
         clickEvent,
         color,
+        disabled,
         icon,
         text,
         type,
@@ -53,6 +54,7 @@ const Button = memo((props) => {
             id={`${Id}`}
             onClick={handleClick}
             type={type ? type : 'button'}
+            disabled={disabled}
         >
             <span className="no-click">
             {
