@@ -22,29 +22,23 @@ const EditMenuSocial = ({ businessSocial, setBusinessSocial }) => {
     }
 
     const addNewSocial = () => {
-        const socialArray = businessSocial
-        socialArray.push(
-            { 
-                name: socialNetworkName, 
-                url: newSocialUrl,
-                id: `social_${socialArray.length + 1}`
-            }
-        )
-        // bubble up
+        const randomId = Math.floor(Math.random() * 1000001);
+        const newItem = { 
+            name: socialNetworkName, 
+            url: newSocialUrl,
+            id: `social_${randomId}`
+        }
+        const socialArray = [...businessSocial, newItem]
         setBusinessSocial(socialArray)
-        // reset value
         setNewSocialUrl('')
-        // hide input UI
         toggleInputShown()
     }
 
     const removeSocialLink = (event) => {
-        console.log(event.target.id);
-        console.log(businessSocial);
-        const newArray = businessSocial.filter(
+        const socialArray = businessSocial.filter(
             item => item.id !== event.target.id
         )
-        setBusinessSocial(newArray)
+        setBusinessSocial(socialArray)
     }
     
     return (
@@ -125,12 +119,12 @@ const EditMenuSocial = ({ businessSocial, setBusinessSocial }) => {
                                 value={newSocialUrl}
                                 name="social web address"
                             />
-                            <Button
-                                Id="add-social-url"
-                                clickEvent={addNewSocial}
-                                icon="add"
-                            />
                         </label>
+                        <Button
+                            Id="add-social-url"
+                            clickEvent={addNewSocial}
+                            icon="add"
+                        />
                     </form>
 
                 : null

@@ -4,6 +4,7 @@
 
     .menu-social__warning {
         display: flex;
+        margin-bottom: 12px;
 
         svg {
             color: var(--yellow);
@@ -70,5 +71,11 @@
             position: absolute;
             transform: rotate(45deg);
         }
+    }
+
+    label + button {
+        margin-top: 8px;
+        position: relative;
+        margin-left: auto;
     }
 }
