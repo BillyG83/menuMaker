@@ -14,6 +14,22 @@
   --yellow: #e1b12c;
 }
 
+.yellow {
+  color: var(--yellow);
+}
+
+.red {
+  color: var(--red);
+}
+
+.green {
+  color: var(--green);
+}
+
+.purple {
+  color: var(--purple);
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
