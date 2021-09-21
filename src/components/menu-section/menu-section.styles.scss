@@ -1,7 +1,7 @@
 .menu-section {
     display: block;
 
-    h3 {
+    h2 {
         background-color: var(--greyLight);
         display: block;
         padding: 8px;
@@ -11,18 +11,18 @@
         top: 24px;
         z-index: 1;
     }
-
-    &:first-of-type ul {
-        padding-top: 20px;
-    }
-
-    &:last-of-type ul {
-        padding-bottom: 0px;
-        min-height: calc(100vh - 44px);
-    }
 }
 
 .menu-section__list {
     list-style: none;
     padding: 36px 16px 54px;
+
+    &:first-of-type {
+        padding-top: 20px;
+    }
+
+    &:last-of-type {
+        padding-bottom: 0px;
+        min-height: calc(100vh - 44px);
+    }
 }

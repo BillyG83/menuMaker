@@ -5,7 +5,7 @@ import './menu-section.styles.scss'
 const MenuSection = ({ sectionName, sectionItems }) => {
 	return(
 		<section id={'menu-section-' + sectionName} className="menu-section">
-			<h3>{sectionName}</h3>
+			<h2>{sectionName}</h2>
 
 			<ul className="menu-section__list">
 				{
