@@ -65,7 +65,7 @@ const mockData = {
                             icons: [
                                 { name: 'soft drink', icon: 'drink' },
                                 { name: 'sweet', icon: 'sugar' },
-                                { name: 'sugar free option', icon: 'sugar-free' },
+                                { name: 'sugar free option', icon: 'sugar' },
                             ],
                             variants: [
                                 {
@@ -166,16 +166,12 @@ const mockData = {
                                 { name: 'vegetarian', icon: 'plant' },
                             ],
                             ingredients: [
-                                { value: "cup milk" },
-                                { value: "white vinegar" },
-                                { value: "flour" },
-                                { value: "white sugar" },
-                                { value: "baking powder" },
-                                { value: "baking soda" },
-                                { value: "salt" },
-                                { value: "egg" },
-                                { value: "butter }, melted" },
-                                { value: "cooking spray" },
+                                "baking powder",
+                                "baking soda",
+                                "salt",
+                                "egg",
+                                "butter, melted",
+                                "cooking spray",
                             ],
                         },
                         {
@@ -193,8 +189,10 @@ const mockData = {
                                 { name: 'vegetarian', icon: 'plant' },
                             ],
                             ingredients: [
-                                "eggs",
-                                "bread"
+                                "cup milk",
+                                "white vinegar",
+                                "flour",
+                                "white sugar",
                             ],
                         }
                     ]
@@ -231,11 +229,9 @@ const mockData = {
                             ],
                             ingredients: [
                                 "cup milk",
-                                "white vinegar",
                                 "flour",
                                 "white sugar",
                                 "baking powder",
-                                "baking soda",
                                 "salt",
                                 "egg",
                                 "butter, melted",
