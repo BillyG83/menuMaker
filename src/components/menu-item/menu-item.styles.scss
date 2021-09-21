@@ -3,13 +3,18 @@ li.menu-item {
     padding-bottom: 32px;
     margin-bottom: 32px;
 
+    .menu-item__flex {
+        display: flex;
+        justify-content: space-between;
+    
+        + .show-more-less {
+            margin-top: 20px;
+        }
+    }
+
     .price {
         display: block;
         padding-bottom: 12px;
-    }
-
-    .button {
-        margin-bottom: 8px;
     }
 
     &:last-of-type {
