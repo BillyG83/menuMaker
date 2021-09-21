@@ -5,9 +5,11 @@
 
     .show-more-less__header {
         align-items: center;
+        background-color: var(--greyLight);
         display: flex;
         font-size: 18px;
         justify-content: space-between;
+        padding: 8px;
 
         button {
             background-color: var(--grey);
@@ -46,10 +48,16 @@
         overflow: hidden;
         transition: max-height 0.3s ease-out;
         margin-bottom: 12px;
+        padding: 0 8px;
+        
+        p {
+            font-size: 14px;
+        }
     }
 
     &.open .show-more-less__content{
         max-height: 500px;
         overflow: hidden;
+        padding: 8px;
     }
 }
