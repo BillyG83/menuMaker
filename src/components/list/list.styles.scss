@@ -1,0 +1,22 @@
+.list {
+    display:  block;
+    margin-bottom: 20px;
+
+    h4 {
+        margin-bottom: 12px;
+    }
+
+    ul {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        list-style: disc;
+        padding-left: 20px;
+        width: calc(100% - 20px);
+    }
+    
+    li {
+        margin-bottom: 4px;
+        width: 46%;
+    }
+}
