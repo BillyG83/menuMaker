@@ -13,6 +13,10 @@
     width: 100%;
     position: relative;
 
+    &:focus {
+        outline: 3px solid var(--purple);
+    }
+
     &:active {
         filter: grayscale(50%);
     }
@@ -37,6 +41,10 @@
 
     &.button--purple {
         background-color: var(--purple);
+
+        &:focus {
+            outline: 3px solid var(--green);
+        }
     }
 
     &.button--fit-content {
