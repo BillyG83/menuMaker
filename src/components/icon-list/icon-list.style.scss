@@ -6,11 +6,59 @@
     list-style: none;
 
     li {
-        padding: 8px;
         margin-right: 4px;
+        padding: 8px;
+        position: relative;
+
+        span {
+            pointer-events: none;
+        }
+
+        .icon-list__icon {
+            display: block;
+        }
+
+        .icon-list__tooltip {
+            background-color: var(--blue);
+            border-radius: 15px;
+            color: var(--white);
+            display: block;
+            font-weight: 600;
+            left: 0;
+            opacity: 0;
+            padding: 2px 8px 4px;
+            position: absolute;
+            top: -16px;
+            transition: opacity 0.15s ease-out;
+            white-space: nowrap;
+            
+            &:after {
+                background-color: var(--blue);
+                bottom: -3px;
+                content: '';
+                display: block;
+                height: 8px;
+                left: 12px;
+                position: absolute;
+                transform: rotate(45deg);
+                width: 8px;
+                z-index: 0;
+            }
+
+            .icon-list__tooltip-text {
+                position: relative;
+                z-index: 1;
+            }
+        }
 
         &:first-of-type {
             margin-left: -6px;
+        }
+
+        &.icon-list--open-tooltip {
+            .icon-list__tooltip {
+                opacity: 1;
+            }
         }
     }
 }
