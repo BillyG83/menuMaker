@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux'
 import { selectMenuToEdit } from '../../redux/accounts/accounts.selectors'
 import Button from '../button/button.component'
+import MenuEditor from '../menu-editor/menu-editor.component'
 import EditMenuSocial from '../edit-menu-social/edit-menu-social.component'
 import './edit-menu.styles.scss'
 
@@ -37,14 +38,15 @@ const EditMenu = ({ menuData }) => {
                 : 'not yet published'
             }</p>
 
-            {
-                businessSocial ?
-                <EditMenuSocial 
-                    businessSocial={businessSocial}
-                    setBusinessSocial={setBusinessSocial}
-                />
-                : null
-            }
+            <MenuEditor 
+                businessMenu={businessMenu}
+                setBusinessMenu={setBusinessMenu}
+            />
+
+            <EditMenuSocial 
+                businessSocial={businessSocial}
+                setBusinessSocial={setBusinessSocial}
+            />
 
             <div className="edit-menu__buttons">
                 <Button 
