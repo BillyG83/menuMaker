@@ -1,12 +1,17 @@
 import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux'
-import { selectMenuToEdit } from '../../redux/accounts/accounts.selectors'
+import { selectAccountToEdit } from '../../redux/accounts/accounts.selectors'
 import Button from '../button/button.component'
 import MenuEditor from '../menu-editor/menu-editor.component'
 import EditMenuSocial from '../edit-menu-social/edit-menu-social.component'
+import { accountUpdateMenu, accountUpdateSocial } from '../../redux/accounts/accounts.actions'
 import './edit-menu.styles.scss'
 
-const EditMenu = ({ menuData }) => {
+const EditMenu = ({ 
+    menuData,
+    updateAccountsMenu,
+    updateAccountsSocial,
+}) => {
     const [ businessCurrency, setBusinessCurrency ] = useState(menuData.businessCurrency)
     const [ businessName, setBusinessName ] = useState(menuData.businessName)
     const [ businessPostCode, setBusinessPostCode ] = useState(menuData.businessPostCode)
@@ -17,11 +22,15 @@ const EditMenu = ({ menuData }) => {
     const [ isDataUpdated, setIsDataUpdated ] = useState(false)
 
     useEffect( () => {
-        console.log('businessSocial changed');
-    }, [ businessSocial ])
+        setIsDataUpdated(true)
+    }, [ businessMenu, businessSocial ])
 
     const updatesSaved = () => {
+        // Bill start here this updates the redux 
+        // but going back to /admin and back to /menu wipes the store again
         setIsDataUpdated(false)
+        updateAccountsMenu(businessMenu)
+        updateAccountsSocial(businessSocial)
     }
 
     const handleClick = (event) => {
@@ -51,7 +60,7 @@ const EditMenu = ({ menuData }) => {
             <div className="edit-menu__buttons">
                 <Button 
                     clickEvent={updatesSaved}
-                    disabled={isDataUpdated}
+                    disabled={!isDataUpdated}
                 >
                     Save Changes
                 </Button>
@@ -71,7 +80,12 @@ const EditMenu = ({ menuData }) => {
 }
 
 const mapStateToProps = state => ({
-    menuData: selectMenuToEdit(state)
+    menuData: selectAccountToEdit(state)
 })
 
-export default connect(mapStateToProps)(EditMenu)
+const mapDispatchToProps = dispatch => ({
+    updateAccountsMenu: (data) => dispatch(accountUpdateMenu(data)),
+    updateAccountsSocial: (data) => dispatch(accountUpdateSocial(data)),
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(EditMenu)
