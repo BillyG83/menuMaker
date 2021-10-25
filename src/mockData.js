@@ -26,6 +26,7 @@ const mockData = {
             ],
             businessMenu: [
                 {
+                    catID: 'cat_drinks',
                     catName: "Drinks",
                     catIcon: "drink",
                     catOrder: 3,
@@ -119,6 +120,7 @@ const mockData = {
                     ]
                 },
                 {
+                    catID: 'cat_starters',
                     catName: "Starters",
                     catIcon: "fork",
                     catOrder: 1,
@@ -198,6 +200,7 @@ const mockData = {
                     ]
                 },
                 {
+                    catID: 'cat_mains',
                     catName: "Mains",
                     catIcon: "plate",
                     catOrder: 2,
