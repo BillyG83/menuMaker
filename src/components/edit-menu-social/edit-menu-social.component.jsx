@@ -45,14 +45,14 @@ const EditMenuSocial = ({ businessSocial, setBusinessSocial }) => {
         <div className="menu-social">
             <h3>Social Links</h3>
             {
-                businessSocial.length === 0 ?
+                businessSocial?.length === 0 ?
                     <div className="menu-social__warning">
                         <FontAwesomeIcon icon={faExclamation} /><p> You have not added any social links</p>
                     </div>
                 :
                     <ul className="menu-social__list">
                         {
-                            businessSocial.map(social => {
+                            businessSocial?.map(social => {
                                 return (
                                     <li key={social.id}>
                                         <a href={social.url} target="_blank">
@@ -77,7 +77,7 @@ const EditMenuSocial = ({ businessSocial, setBusinessSocial }) => {
                 Id="add-new-social"
                 clickEvent={toggleInputShown}
                 color={!showNewSocialInput ? "blue" : "blueDark"}
-                width="fit-content"
+                icon={!showNewSocialInput ? 'add': 'trash'}
             >
                 { 
                     !showNewSocialInput ? 
