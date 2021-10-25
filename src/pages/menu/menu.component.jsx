@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { createStructuredSelector } from 'reselect'
 import { selectCurrentUser } from '../../redux/user/user.selectors.js'
-import { selectMenuToEdit } from '../../redux/accounts/accounts.selectors.js'
+import { selectAccountToEdit } from '../../redux/accounts/accounts.selectors.js'
 import { signInWithGoogle } from '../../firebase/firebase.js'
 import { auth } from '../../firebase/firebase.js'
 import PageTitle from '../../components/page-title/page-title.component.jsx'
@@ -19,29 +19,31 @@ const MenuPage = ({ currentUser, accountToEdit }) => {
 			<PageTitle text={'Update Menu'} />
 			<div className="page-inner">
 				{
-					hasAccountToEdit ?
-					<EditMenu />
-					:
-					<div>
-						<p>Oops there is no menu to edit</p>
-						<Link
-							className="button" 
-							to="/admin"
-						>
-							Admin Area
-						</Link>
-					</div>
-				}
-				{
 					currentUser ?
-						<div className="menu-page__footer">
-							<Button 
-								id="google-sign-in" 
-								text="Sign out"
-								clickEvent={auth.signOut()}
-								color="purple"
-							/>
-						</div>
+						<>
+							{
+								hasAccountToEdit ?
+								<EditMenu />
+								:
+								<div>
+									<p>Oops there is no menu to edit</p>
+									<Link
+										className="button" 
+										to="/admin"
+									>
+										Admin Area
+									</Link>
+								</div>
+							}
+							<div className="menu-page__footer">
+								<Button 
+									id="google-sign-out" 
+									text="Sign out"
+									clickEvent={auth.signOut()}
+									color="purple"
+								/>
+							</div>
+						</>
 					:
 						<div className="menu-page__footer">
 							<p>Hey there, are you a customer?</p>
@@ -67,7 +69,7 @@ const MenuPage = ({ currentUser, accountToEdit }) => {
 
 const mapStateToProps = createStructuredSelector({
     currentUser: selectCurrentUser,
-	accountToEdit: selectMenuToEdit
+		accountToEdit: selectAccountToEdit
 })
 
 export default connect(mapStateToProps)(MenuPage)
