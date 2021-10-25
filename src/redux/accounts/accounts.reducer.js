@@ -23,6 +23,22 @@ const accountsReducer = (state = INITIAL_STATE, action) => {
                 ...state,
                 accountToEdit: action.payload,
             }
+        case reduxConst.ACCOUNT_UPDATE_MENU:
+            return {
+                ...state,
+                accountToEdit: {
+                    ...state.accountToEdit,
+                    businessMenu: action.payload
+                }
+            }
+        case reduxConst.ACCOUNT_UPDATE_SOCIAL:
+            return {
+                ...state,
+                accountToEdit: {
+                    ...state.accountToEdit,
+                    businessSocial: action.payload
+                }
+            }
         default:
             return state
     }

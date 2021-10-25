@@ -10,7 +10,17 @@ export const addNewUsersAccounts = account => ({
     payload: account
 })
 
-export const selectMenuToEdit = account => ({
+export const selectAccountToEdit = account => ({
     type: reduxConst.SELECT_MENU_TO_EDIT,
     payload: account
+})
+
+export const accountUpdateSocial = social => ({
+    type: reduxConst.ACCOUNT_UPDATE_SOCIAL,
+    payload: social
+})
+
+export const accountUpdateMenu = menu => ({
+    type: reduxConst.ACCOUNT_UPDATE_MENU,
+    payload: menu
 })

@@ -7,7 +7,17 @@ export const selectUserAccounts = createSelector(
     menus => menus.accounts
 )
 
-export const selectMenuToEdit = createSelector(
+export const selectAccountToEdit = createSelector(
     [menus],
     menus => menus.accountToEdit
+)
+
+export const selectAccountsMenu = createSelector(
+    [selectAccountToEdit],
+    account => account.businessMenu
+)
+
+export const selectAccountsSocial = createSelector(
+    [selectAccountToEdit],
+    account => account.businessSocial
 )
