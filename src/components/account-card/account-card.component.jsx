@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { selectMenuToEdit } from '../../redux/accounts/accounts.actions'
+import { selectAccountToEdit } from '../../redux/accounts/accounts.actions'
 import './account-card-styles.scss'
 
 const AccountCard = (props) => {
@@ -37,7 +37,7 @@ const AccountCard = (props) => {
 }
 
 const mapDispatchToProps = dispatch => ({
-	accountToEdit: account => dispatch(selectMenuToEdit(account))
+	accountToEdit: account => dispatch(selectAccountToEdit(account))
 })
 
 
