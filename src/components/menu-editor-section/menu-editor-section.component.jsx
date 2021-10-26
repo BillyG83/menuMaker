@@ -23,7 +23,7 @@ const MenuEditorSection = ({section, setSections}) => {
     <div className="menu-editor-section">
         <h3>{catName}</h3>
         <p>{catItems.length} items</p>
-        <Button color={isActive ? 'green' : 'gray'}>{isActive ? 'active' : 'hidden'}</Button>
+        <Button width="fit-content" color={isActive ? 'green' : 'gray'}>{isActive ? 'active' : 'hidden'}</Button>
     </div>
   )
 }
