@@ -81,7 +81,7 @@ export const addNewMenu = async (userId, newMenuData) => {
             console.warn('error creating user account: ', error)
         }
     } else {
-        console.warn('This menu can not be created as it already exists: ', error)
+        console.warn('This menu can not be created as it already exists')
     }
 
     return
@@ -103,7 +103,7 @@ export const saveMenuChanges = async (userId, newMenuData) => {
             console.warn('error updating user account menu: ', error)
         }
     } else {
-        console.warn('error the menu can not be saved as it does not exist: ', error)
+        console.warn('error the menu can not be saved as it does not exist')
     }
 
     return
