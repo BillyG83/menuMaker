@@ -63,6 +63,7 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
     return userRef
 }
 
+// adds a new menu to the users account
 export const addNewMenu = async (userId, newMenuData) => {
     if (!userId || !newMenuData) return
 
@@ -77,8 +78,32 @@ export const addNewMenu = async (userId, newMenuData) => {
                 ...newMenuData
             })
         } catch (error) {
-            console.log('error creating user account: ', error)
+            console.warn('error creating user account: ', error)
         }
+    } else {
+        console.warn('This menu can not be created as it already exists: ', error)
+    }
+
+    return
+}
+
+// saves updates made to a menu
+export const saveMenuChanges = async (userId, newMenuData) => {
+    if (!userId || !newMenuData) return
+
+    // getting the firebase snapshot of a users accounts
+    const accountRef = firestore.doc(`users/${userId}/accounts/${newMenuData.businessId}`)
+    const snapShot = await accountRef.get()
+    
+    if (snapShot.exists) {
+        try {
+            // if the menu exists and then overwrite its data with new menu data
+            await accountRef.set(newMenuData)
+        } catch (error) {
+            console.warn('error updating user account menu: ', error)
+        }
+    } else {
+        console.warn('error the menu can not be saved as it does not exist: ', error)
     }
 
     return
