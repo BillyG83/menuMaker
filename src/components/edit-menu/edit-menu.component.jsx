@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux'
-import { selectAccountToEdit } from '../../redux/accounts/accounts.selectors'
 import Button from '../button/button.component'
 import MenuEditor from '../menu-editor/menu-editor.component'
 import EditMenuSocial from '../edit-menu-social/edit-menu-social.component'
 import { accountUpdateMenu, accountUpdateSocial } from '../../redux/accounts/accounts.actions'
+import { selectAccountToEdit } from '../../redux/accounts/accounts.selectors'
+import { selectCurrentUser } from '../../redux/user/user.selectors.js'
+import { saveMenuChanges } from '../../firebase/firebase'
 import './edit-menu.styles.scss'
 
 const EditMenu = ({ 
+    currentUser,
     menuData,
     updateAccountsMenu,
     updateAccountsSocial,
@@ -26,11 +29,23 @@ const EditMenu = ({
     }, [ businessMenu, businessSocial ])
 
     const updatesSaved = () => {
-        // Bill start here this updates the redux 
-        // but going back to /admin and back to /menu wipes the store again
         setIsDataUpdated(false)
         updateAccountsMenu(businessMenu)
         updateAccountsSocial(businessSocial)
+
+        const updatedMenuData = {
+            businessCurrency: businessCurrency,
+            businessId: menuData.businessId,
+            businessInfo: businessInfo,
+            businessJoinDate: menuData.businessJoinDate,
+            businessMenu: businessMenu,
+            businessName: businessName,
+            businessPostCode: businessPostCode,
+            businessSocial: businessSocial,
+            published: published,
+        }
+        
+        saveMenuChanges(currentUser.id, updatedMenuData)
     }
 
     const handleClick = (event) => {
@@ -61,6 +76,7 @@ const EditMenu = ({
                 <Button 
                     clickEvent={updatesSaved}
                     disabled={!isDataUpdated}
+                    Id="save-button"
                 >
                     Save Changes
                 </Button>
@@ -80,7 +96,8 @@ const EditMenu = ({
 }
 
 const mapStateToProps = state => ({
-    menuData: selectAccountToEdit(state)
+    currentUser: selectCurrentUser(state),
+    menuData: selectAccountToEdit(state),
 })
 
 const mapDispatchToProps = dispatch => ({
