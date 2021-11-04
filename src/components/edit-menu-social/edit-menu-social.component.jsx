@@ -85,7 +85,7 @@ const EditMenuSocial = ({ businessSocial, setBusinessSocial }) => {
                     : 'never mind'
                     
                 }
-                </Button>
+            </Button>
 
             {
                 showNewSocialInput ?
