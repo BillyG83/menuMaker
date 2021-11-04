@@ -1,6 +1,6 @@
 import React, { memo, useContext } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faInfo, faLanguage, faShareAlt, faPlus, faTrash } from '@fortawesome/free-solid-svg-icons'
+import { faInfo, faLanguage, faShareAlt, faPlus, faTrash, faTimes } from '@fortawesome/free-solid-svg-icons'
 import { ThemeContext } from '../../App.js'
 import './button.styles.scss'
 
@@ -28,6 +28,8 @@ const Button = memo((props) => {
         switch(icon) {
             case 'add' :
                 return <FontAwesomeIcon icon={faPlus} />
+            case 'times' || 'close' :
+                return <FontAwesomeIcon icon={faTimes} />
             case 'share':
                 return <FontAwesomeIcon icon={faShareAlt} />
             case 'info':
