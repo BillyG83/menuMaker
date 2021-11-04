@@ -29,28 +29,31 @@ const MenuEditor = ({ businessMenu, setBusinessMenu }) => {
     }))
   }
 
-  const handleClick = () => {
-    if (newSection.isOpen) {
-      const sectionData = {
-        catName: newSection.value,
-        catID: `cat_${newSection.value.replace(/\s+/g, '-').toLowerCase()}`,
-        catIcon: '',
-        catOrder: 0,
-        isActive: true,
-        catItems: [],
-      }
-      setSections(prevState => ([
-        ...prevState,
-        sectionData
-      ]))
-      setNewSection(prevState => ({
-        ...prevState,
-        value: ''
-      }))
-      toggleAddInput()
-    } else {
-      toggleAddInput()
+  const makeNewSection = () => {
+    const newCatID = `cat_${newSection.value.replace(/\s+/g, '-').toLowerCase()}`
+    
+    if (sections.some(section => section.catID === newCatID)) {
+      alert('that category already exists')
+      return
     }
+    
+    const sectionData = {
+      catName: newSection.value,
+      catID: newCatID,
+      catIcon: '',
+      catOrder: 0,
+      isActive: true,
+      catItems: [],
+    }
+    setSections(prevState => ([
+      ...prevState,
+      sectionData
+    ]))
+    setNewSection(prevState => ({
+      ...prevState,
+      value: ''
+    }))
+    toggleAddInput()
   }
 
   const renderMenuSections = () => (
@@ -64,18 +67,34 @@ const MenuEditor = ({ businessMenu, setBusinessMenu }) => {
   )
 
   const renderNewSectionInput = () => (
-    <input 
-      type="text"
-      className="input menu-editor__input"
-      placeholder="starter, main, drinks..."
-      onChange={inputChanged}
-      value={newSection.value}
-    />
+    <>
+      <input 
+        type="text"
+        className="input menu-editor__input"
+        placeholder="starter, main, drinks..."
+        onChange={inputChanged}
+        value={newSection.value}
+      />
+      <Button 
+        Id="add-new-section"
+        icon="add" 
+        color={'green'}
+        clickEvent={makeNewSection}
+      >Add menu section</Button>
+    </>
   )
 
   return (
     <section className="menu-editor">
-      <h2>Menu items</h2>
+      <div className="menu-editor__header">
+        <h2>Menu items</h2>
+        <Button 
+          Id="open-new-section-input"
+          icon={newSection.isOpen ? 'times' : 'add'}
+          color={newSection.isOpen ? 'greyDark' : 'blue'}
+          clickEvent={toggleAddInput}
+        >Add menu section</Button>
+      </div>
 
         <div className="menu-editor__sections">
           {
@@ -91,11 +110,6 @@ const MenuEditor = ({ businessMenu, setBusinessMenu }) => {
             renderNewSectionInput()
             : ''
           }
-          <Button 
-            icon="add" 
-            color={newSection.isOpen ? 'green' : 'blue'}
-            clickEvent={handleClick}
-          >Add menu section</Button>
         </div>
 
     </section>
