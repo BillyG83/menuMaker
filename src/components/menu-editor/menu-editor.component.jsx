@@ -13,6 +13,10 @@ const MenuEditor = ({ businessMenu, setBusinessMenu }) => {
   useEffect(() => {
     setBusinessMenu(sections)
   }, [sections])
+
+  useEffect(() => {
+    newSection.isOpen && document.querySelector('#new-section-input').focus()
+  }, [newSection.isOpen])
   
   const toggleAddInput = () => {
     setNewSection(prevState => ({
@@ -69,17 +73,18 @@ const MenuEditor = ({ businessMenu, setBusinessMenu }) => {
   const renderNewSectionInput = () => (
     <>
       <input 
-        type="text"
         className="input menu-editor__input"
-        placeholder="starter, main, drinks..."
+        id="new-section-input"
         onChange={inputChanged}
+        placeholder="starter, main, drinks..."
+        type="text"
         value={newSection.value}
       />
       <Button 
         Id="add-new-section"
-        icon="add" 
-        color={'green'}
         clickEvent={makeNewSection}
+        color={'green'}
+        icon="add" 
       >Add menu section</Button>
     </>
   )
