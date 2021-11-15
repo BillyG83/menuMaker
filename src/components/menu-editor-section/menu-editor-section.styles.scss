@@ -9,3 +9,11 @@
   display: flex;
   justify-content: space-between;
 }
+
+ul:empty {
+  display: none;
+}
+
+.menu-editor-section__items {
+  padding: 4px 0 16px 20px;
+}

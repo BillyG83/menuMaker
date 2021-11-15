@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import NewItemForm from '../new-item-form/new-item-form'
 import Button from '../button/button.component'
 import './menu-editor-section.styles.scss'
 
@@ -19,15 +20,36 @@ const MenuEditorSection = ({section, setSections}) => {
   }
   const [newItem, setNewItem] = useState(newItemInitial)
   const [confirmDelete, setConfirmDelete] = useState(false)
+  const [showNewItemForm, setShowNewItemForm] = useState(false)
 
   const deleteClicked = () => {
     if (confirmDelete) {
-      console.log('delete ' + catID);
-      console.log('section', section);
       setConfirmDelete(false)
+      setSections((prevState) => {
+        const stateCopy = [...prevState]
+        const newState = stateCopy.filter(section => section.catID !== catID)
+        return [...newState]
+      })
     } else {
       setConfirmDelete(true)
+      setTimeout(() => setConfirmDelete(false), 3000)
     }
+  }
+
+  const addNewItemClicked = () => {
+    if (showNewItemForm) {
+      setShowNewItemForm(false)
+    } else {
+      setShowNewItemForm(true)
+    }
+  }
+
+  const addItemToSection = () => {
+    setSections((prevState) => {
+      const stateCopy = [...prevState]
+      stateCopy.find(x => x.catID === catID).catItems.push(newItem)
+      return(stateCopy)
+    })
   }
 
   return (
@@ -35,11 +57,21 @@ const MenuEditorSection = ({section, setSections}) => {
         <h3>{catName}</h3>
         <p>{catItems.length} items</p>
 
+        {/* might be empty */}
+        <ul className="menu-editor-section__items">
+          {
+            catItems.map((item) => (
+              <li key={`${catID}-item-${item.name}`}>{item.name}</li>
+            ))
+          }
+        </ul>
+
         <div className="menu-editor-section__buttons">
           <Button 
             Id="section-add-item"
-            icon="add" 
-            color='blue'
+            icon={showNewItemForm ? 'times' : 'add'}
+            color={showNewItemForm ? 'greyDark' : 'blue'}
+            clickEvent={addNewItemClicked}
           >Add section item</Button>
           
           <Button 
@@ -58,6 +90,16 @@ const MenuEditorSection = ({section, setSections}) => {
               delete {catName}?
           </Button>
         </div>
+        
+        {
+          showNewItemForm ? 
+            <NewItemForm 
+              newItem={newItem} 
+              setNewItem={setNewItem}
+              addItemToSection={addItemToSection}
+            />
+          : ''
+        }
     </div>
   )
 }
