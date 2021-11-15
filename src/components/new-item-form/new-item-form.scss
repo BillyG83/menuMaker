@@ -1,0 +1,35 @@
+.new-item-form {
+  background-color: var(--white);
+  margin-bottom: 28px;
+  margin-top: 28px;
+
+  .new-item-form__inner {
+    padding: 8px 12px;
+  }
+
+  h3 {
+    background-color: var(--blue);
+    color: var(--white);
+    margin-bottom: 8px;
+    padding: 8px 12px;
+  }
+
+  label {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  input,
+  textarea {
+    margin-bottom: 20px;
+    margin-top: 4px;
+    padding: 8px;
+    outline: none;
+    border: 1px solid var(--grey)
+  }
+
+  .new-item-form__buttons {
+    display: flex;
+  }
+}
