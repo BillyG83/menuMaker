@@ -52,15 +52,15 @@ html {
   padding: 0 16px;
 }
 
-.euro .price:after {
+.EUR .price:after {
   content: ' €';
 }
 
-.pound .price:before {
+.GBP .price:before {
   content: '£ ';
 }
 
-.dollar .price:before {
+.USD .price:before {
   content: '$ ';
 }
 

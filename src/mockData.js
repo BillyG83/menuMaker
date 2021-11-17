@@ -5,7 +5,7 @@ const mockData = {
     id: 'ZSpvTufpfgZKikuXCDsZPQHboVh2',
     accounts: [
         {
-            businessCurrency: "euro",
+            businessCurrency: "EUR",
             businessId: "PQHboVh2-20210302-28004-billsbar",
             businessJoinDate: "2021-03-02",
             businessLogo: "/img/logo.jpg",
