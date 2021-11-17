@@ -8,6 +8,7 @@
 .menu-editor-section__buttons {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 12px;
 }
 
 ul:empty {
@@ -15,5 +16,35 @@ ul:empty {
 }
 
 .menu-editor-section__items {
-  padding: 4px 0 16px 20px;
+  padding: 4px 0 16px 0;
+  list-style: none;
+
+  li {
+    background-color: var(--white);
+    border-bottom: 4px solid var(--blue);
+    border-radius: 20px;
+    border: 2px solid var(--blue);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    padding: 8px 12px;
+  }
+
+  .title {
+    width: 50%;
+  }
+
+  .price {
+    width: 50%;
+  }
+
+  .buttons {
+    padding: 8px 0;
+    display: flex;
+
+    button {
+      margin-right: 8px;
+    }
+  }
 }
