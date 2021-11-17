@@ -63,6 +63,7 @@ const EditMenu = ({
             }</p>
 
             <MenuEditor 
+                businessCurrency={businessCurrency}
                 businessMenu={businessMenu}
                 setBusinessMenu={setBusinessMenu}
             />
