@@ -59,6 +59,15 @@
         max-width: fit-content;
     }
 
+    &.button--size-small {
+        height: 24px;
+        width: 24px;
+
+        svg {
+            max-width: 16px;
+        }
+    }
+
     &:before {
         display: block;
         height: 2px;

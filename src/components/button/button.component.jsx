@@ -1,6 +1,14 @@
 import React, { memo, useContext } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faInfo, faLanguage, faShareAlt, faPlus, faTrash, faTimes } from '@fortawesome/free-solid-svg-icons'
+import {
+    faEdit,
+    faInfo,
+    faLanguage,
+    faPlus,
+    faShareAlt,
+    faTimes,
+    faTrash,
+} from '@fortawesome/free-solid-svg-icons'
 import { ThemeContext } from '../../App.js'
 import './button.styles.scss'
 
@@ -14,6 +22,7 @@ const Button = memo((props) => {
         color,
         disabled,
         icon,
+        size,
         text,
         type,
         width,
@@ -28,7 +37,9 @@ const Button = memo((props) => {
         switch(icon) {
             case 'add' :
                 return <FontAwesomeIcon icon={faPlus} />
-            case 'times' || 'close' :
+            case 'edit' :
+                return <FontAwesomeIcon icon={faEdit} />
+            case 'times' :
                 return <FontAwesomeIcon icon={faTimes} />
             case 'share':
                 return <FontAwesomeIcon icon={faShareAlt} />
@@ -52,6 +63,7 @@ const Button = memo((props) => {
                 ${color ? `button--${color}` : ''}
                 ${width ? `button--${width}` : ''}
                 ${icon ? 'button--icon' : ''}
+                ${size ? `button--size-${size}` : ''}
             `}
             id={`${Id}`}
             onClick={handleClick}
