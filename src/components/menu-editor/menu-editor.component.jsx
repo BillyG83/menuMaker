@@ -3,7 +3,7 @@ import Button from '../button/button.component'
 import MenuEditorSection from '../menu-editor-section/menu-editor-section.component'
 import './menu-editor.styles.scss'
 
-const MenuEditor = ({ businessMenu, setBusinessMenu }) => {
+const MenuEditor = ({ businessCurrency, businessMenu, setBusinessMenu }) => {
   const [sections, setSections] = useState(businessMenu)
   const [newSection, setNewSection] = useState({
     isOpen: false,
@@ -63,6 +63,7 @@ const MenuEditor = ({ businessMenu, setBusinessMenu }) => {
   const renderMenuSections = () => (
     sections?.map((section) => (
       <MenuEditorSection 
+        businessCurrency={businessCurrency}
         key={`${section.catID}`}
         section={section}
         setSections={setSections}
