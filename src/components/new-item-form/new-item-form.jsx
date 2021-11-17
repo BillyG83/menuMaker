@@ -2,11 +2,16 @@ import React from 'react'
 import Button from '../button/button.component'
 import './new-item-form.scss'
 
-const NewItemForm = ({addItemToSection, newItem, setNewItem}) => {
+const NewItemForm = ({
+  addItemToSection,
+  businessCurrency,
+  newItem,
+  setNewItem,
+}) => {
   const submit = (event) => {
     event.preventDefault()
-    console.log(event)
     addItemToSection()
+    event.target.reset()
   }
 
   const inputUpdated = (event) => {
@@ -22,7 +27,7 @@ const NewItemForm = ({addItemToSection, newItem, setNewItem}) => {
   }
 
   return (
-    <form className="new-item-form" onSubmit={submit}>
+    <form id="JSnewItemForm" className="new-item-form" onSubmit={submit}>
       <h3>Add new menu item</h3>
 
       <div className="new-item-form__inner">
@@ -50,7 +55,7 @@ const NewItemForm = ({addItemToSection, newItem, setNewItem}) => {
         </label>
 
         <label>
-          Price
+          Price ({businessCurrency})
           <input 
             data-name={'price'}
             onChange={inputUpdated}
@@ -90,14 +95,12 @@ const NewItemForm = ({addItemToSection, newItem, setNewItem}) => {
           Id="cancel-new-item"
           color="grey"
           text="Cancel"
-          width="100%"
         />
         <Button 
           Id="add-new-item"
           color="green"
           text="Done"
           type="submit"
-          width="100%"
         />
       </div>
     </form>
