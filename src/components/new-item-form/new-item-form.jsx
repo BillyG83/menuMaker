@@ -11,7 +11,6 @@ const NewItemForm = ({
   const submit = (event) => {
     event.preventDefault()
     addItemToSection()
-    event.target.reset()
   }
 
   const inputUpdated = (event) => {
