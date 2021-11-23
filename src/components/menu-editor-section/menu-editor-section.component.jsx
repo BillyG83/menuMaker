@@ -44,11 +44,33 @@ const MenuEditorSection = ({businessCurrency, section, setSections}) => {
     }
   }
 
+  const makeItemID = () => {
+    const nameString = newItem.name.replace(/\s/g, "-")
+    return `${nameString}_${catID}_${Date.now()}`
+  }
+
   const addItemToSection = () => {
+    const newItemCopy = { ...newItem }
+    newItemCopy.id = `${makeItemID()}`
     setSections((prevState) => {
       const stateCopy = [...prevState]
-      stateCopy.find(x => x.catID === catID).catItems.push(newItem)
-      return(stateCopy)
+      stateCopy.find(x => x.catID === catID).catItems.push(newItemCopy)
+      return stateCopy
+    })
+    setNewItem(newItemInitial)
+    setShowNewItemForm(false)
+  }
+
+  const deleteItemFromSection = (itemToDelete) => {
+    console.log(itemToDelete.id)
+    setSections((prevState) => {
+      const stateCopy = [...prevState]
+      const filtered = stateCopy.find(x => 
+        x.catID === catID).catItems.filter(item => 
+          item.id !== itemToDelete.id
+      )
+      stateCopy.find(x => x.catID === catID).catItems = filtered
+      return stateCopy
     })
   }
 
@@ -99,8 +121,21 @@ const MenuEditorSection = ({businessCurrency, section, setSections}) => {
                 </span>
 
                 <span className="buttons">
-                  <Button Id="edit-menu-item" icon="edit" color="greyDark" size="small">edit</Button>
-                  <Button Id="delete-menu-item" icon="trash" color="greyDark" size="small">delete</Button>
+                  <Button
+                    Id="edit-menu-item"
+                    icon="edit"
+                    color="greyDark"
+                    size="small"
+                  >edit</Button>
+
+                  <Button
+                    Id="delete-menu-item"
+                    icon="trash"
+                    color="greyDark"
+                    size="small"
+                    clickEvent={() => deleteItemFromSection(item)}
+                  >delete</Button>
+
                 </span>
               </li>
             ))
